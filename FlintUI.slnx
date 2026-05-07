@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="examples/FlintUI.Example.csproj" />
+  <Project Path="src/FlintUI.csproj" />
+</Solution>
