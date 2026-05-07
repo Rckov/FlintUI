@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary Source="Brushes/LightBrushes.xaml" />
+        
+        <!--#region DEFAULT -->
+
+        <ResourceDictionary Source="Styles/Font.xaml" />
+        <ResourceDictionary Source="Styles/Radius.xaml" />
+        <ResourceDictionary Source="Styles/Shadows.xaml" />
+
+        <!--#endregion-->
+
+        <!--#region CONTROL STYLE -->
+        
+        <ResourceDictionary Source="Styles/Controls/Badge.xaml" />
+        
+        <!--#endregion-->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
