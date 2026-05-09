@@ -3,7 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
 
         <ResourceDictionary Source="Brushes/LightBrushes.xaml" />
-        
+
         <!--#region DEFAULT -->
 
         <ResourceDictionary Source="Styles/Font.xaml" />
@@ -13,9 +13,10 @@
         <!--#endregion-->
 
         <!--#region CONTROL STYLE -->
-        
+
         <ResourceDictionary Source="Styles/Controls/Badge.xaml" />
-        
+        <ResourceDictionary Source="Styles/Controls/Window.xaml" />
+
         <!--#endregion-->
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
