@@ -15,7 +15,7 @@ public class NumericUpDown : Control
         DependencyProperty.Register(nameof(Value), typeof(double), typeof(NumericUpDown),
             new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
                 (d, _) => ((NumericUpDown)d).UpdateText(),
-                (d, v) => Math.Clamp((double)v, ((NumericUpDown)d).Minimum, ((NumericUpDown)d).Maximum)));
+                (d, v) => ((NumericUpDown)d).CoerceToRange((double)v)));
 
     public static readonly DependencyProperty MinimumProperty =
         DependencyProperty.Register(nameof(Minimum), typeof(double), typeof(NumericUpDown),
@@ -117,6 +117,13 @@ public class NumericUpDown : Control
     {
         CommitText();
         Value += step;
+    }
+
+    private double CoerceToRange(double value)
+    {
+        var max = Math.Max(Minimum, Maximum);
+        if (value < Minimum) return Minimum;
+        return value > max ? max : value;
     }
 
     private void UpdateText()

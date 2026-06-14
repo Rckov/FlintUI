@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
@@ -16,11 +16,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2"/>
+        <ProjectReference Include="..\src\FlintUI.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\src\FlintUI.csproj"/>
+      <Folder Include="Views\" />
     </ItemGroup>
 
 </Project>

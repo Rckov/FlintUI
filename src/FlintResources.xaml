@@ -18,6 +18,7 @@
         <!--#region CONTROL STYLE -->
 
         <ResourceDictionary Source="Styles/Controls/Badge.xaml" />
+        <ResourceDictionary Source="Styles/Controls/Button.xaml" />
         <ResourceDictionary Source="Styles/Controls/Window.xaml" />
         <ResourceDictionary Source="Styles/Controls/Icon.xaml" />
         <ResourceDictionary Source="Styles/Controls/TextBox.xaml" />

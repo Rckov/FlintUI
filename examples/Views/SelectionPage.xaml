@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.SelectionPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="{DynamicResource Spacing.L}">
+            <StackPanel Margin="{DynamicResource Spacing.L.Bottom}">
+                <TextBlock Text="Selection"
+                           FontSize="{DynamicResource FontSize.XL}"
+                           FontWeight="{DynamicResource FontWeight.SemiBold}" />
+                <TextBlock Text="Check a box, pick one option, flip a switch, or drag a slider."
+                           Foreground="{DynamicResource Foreground.Muted}"
+                           Margin="{DynamicResource Spacing.S.Top}" />
+            </StackPanel>
+
+            <Grid Margin="{DynamicResource Spacing.L.Bottom}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Header="Checkbox">
+                    <StackPanel>
+                        <CheckBox Content="Email notifications" IsChecked="True"
+                                  Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <CheckBox Content="Push notifications" Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <CheckBox Content="Weekly digest" IsChecked="True"
+                                  Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <CheckBox Content="Locked option" IsChecked="True" IsEnabled="False" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Grid.Column="1" Header="Radio" Margin="{DynamicResource Spacing.L.Left}">
+                    <StackPanel>
+                        <RadioButton Content="Free" GroupName="Plan" IsChecked="True"
+                                     Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <RadioButton Content="Pro" GroupName="Plan" Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <RadioButton Content="Team" GroupName="Plan" Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <RadioButton Content="Enterprise" GroupName="Plan" IsEnabled="False" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Grid.Column="2" Header="Toggle switch" Margin="{DynamicResource Spacing.L.Left}">
+                    <StackPanel>
+                        <ct:ToggleSwitch Content="Wi-Fi" IsChecked="True"
+                                         Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <ct:ToggleSwitch Content="Bluetooth" Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <ct:ToggleSwitch Content="Airplane mode" Margin="{DynamicResource Spacing.M.Bottom}" />
+                        <ct:ToggleSwitch Content="Disabled" IsChecked="True" IsEnabled="False" />
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+
+            <GroupBox Header="Slider">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Text="Volume" FontSize="{DynamicResource FontSize.S}"
+                                   Foreground="{DynamicResource Foreground.Muted}"
+                                   Margin="{DynamicResource Spacing.S.Bottom}" />
+                        <Slider Minimum="0" Maximum="100" Value="60" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="{DynamicResource Spacing.L.Left}">
+                        <TextBlock Text="Disabled" FontSize="{DynamicResource FontSize.S}"
+                                   Foreground="{DynamicResource Foreground.Muted}"
+                                   Margin="{DynamicResource Spacing.S.Bottom}" />
+                        <Slider Minimum="0" Maximum="100" Value="30" IsEnabled="False" />
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
