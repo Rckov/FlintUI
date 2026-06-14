@@ -1,10 +1,12 @@
 ﻿<ui:Window x:Class="FlintUI.Example.Views.MainView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ui="clr-namespace:FlintUI.Controls;assembly=FlintUI"
-        Title="MainView"
-        Height="450"
-        Width="800">
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:ui="clr-namespace:FlintUI.Controls;assembly=FlintUI"
+           xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+           Title="MainView"
+           Height="450"
+           Icon="/Resources/icon.ico"
+           Width="800" Subtitle="123">
 
     <ui:Window.Resources>
         <Style x:Key="StackItem" TargetType="StackPanel">
@@ -16,9 +18,14 @@
             <Setter Property="FontWeight" Value="{StaticResource FontWeight.Medium}" />
             <Setter Property="Margin" Value="0,0,0,5" />
         </Style>
+        <x:Array x:Key="Roles" Type="{x:Type sys:String}">
+            <sys:String>Admin</sys:String>
+            <sys:String>Editor</sys:String>
+            <sys:String>Viewer</sys:String>
+        </x:Array>
     </ui:Window.Resources>
 
-    <ScrollViewer Margin="20,10" VerticalScrollBarVisibility="Hidden">
+    <ScrollViewer Margin="20,10" VerticalScrollBarVisibility="Auto">
         <StackPanel>
             <StackPanel Style="{StaticResource StackItem}">
                 <StackPanel.Resources>
@@ -41,15 +48,341 @@
             <Separator />
 
             <StackPanel Style="{StaticResource StackItem}">
-                <TextBlock Text="Badge" Style="{StaticResource StackHeader}" />
+                <StackPanel.Resources>
+                    <Style TargetType="ui:TextBox" BasedOn="{StaticResource {x:Type ui:TextBox}}">
+                        <Setter Property="Margin" Value="0,0,5,0" />
+                        <Setter Property="Width" Value="200" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <TextBlock Text="TextBox" Style="{StaticResource StackHeader}" />
 
                 <WrapPanel>
-                    <ui:Badge Margin="0,0,5,0" Content="Default" BadgeType="Default" />
-                    <ui:Badge Margin="0,0,5,0" Content="Accent" BadgeType="Accent" />
-                    <ui:Badge Margin="0,0,5,0" Content="Danger" BadgeType="Danger" />
-                    <ui:Badge Margin="0,0,5,0" Content="Success" BadgeType="Success" />
-                    <ui:Badge Margin="0,0,5,0" Content="Warning" BadgeType="Warning" />
+                    <ui:TextBox />
+                    <ui:TextBox Placeholder="Placeholder" ClearButton="True" />
+                    <ui:TextBox Placeholder="Email" IconKind="Mail"
+                                Text="{Binding Email, UpdateSourceTrigger=PropertyChanged, ValidatesOnNotifyDataErrors=True}" />
                 </WrapPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="PasswordBox" Style="{StaticResource StackHeader}" />
+
+                <WrapPanel>
+                    <ui:PasswordBox Width="200" RevealButton="True" ShowPassword="True" />
+                </WrapPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <StackPanel.Resources>
+                    <Style TargetType="ui:ToggleSwitch" BasedOn="{StaticResource {x:Type ui:ToggleSwitch}}">
+                        <Setter Property="Margin" Value="0,0,5,0" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <TextBlock Text="ToggleSwitch" Style="{StaticResource StackHeader}" />
+
+                <WrapPanel>
+                    <ui:ToggleSwitch />
+                    <ui:ToggleSwitch IsChecked="True" />
+                    <ui:ToggleSwitch IsChecked="True" IsEnabled="False" />
+                </WrapPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <StackPanel.Resources>
+                    <Style TargetType="ui:NumericUpDown" BasedOn="{StaticResource {x:Type ui:NumericUpDown}}">
+                        <Setter Property="Margin" Value="0,0,5,0" />
+                        <Setter Property="Width" Value="150" />
+                    </Style>
+                </StackPanel.Resources>
+
+                <TextBlock Text="NumericUpDown" Style="{StaticResource StackHeader}" />
+
+                <WrapPanel>
+                    <ui:NumericUpDown Value="5" />
+                    <ui:NumericUpDown Value="50" Minimum="0" Maximum="100" Step="10" />
+                    <ui:NumericUpDown Value="1.5" Step="0.5" StringFormat="0.0" />
+                </WrapPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="TabControl" Style="{StaticResource StackHeader}" />
+
+                <ui:TabControl CloseButton="True">
+                    <ui:TabItem Header="Overview">
+                        <TextBlock Text="Overview content" Margin="0,12,0,0" />
+                    </ui:TabItem>
+                    <ui:TabItem Header="Details">
+                        <TextBlock Text="Details content" Margin="0,12,0,0" />
+                    </ui:TabItem>
+                    <ui:TabItem Header="Settings" CanClose="False">
+                        <TextBlock Text="Pinned tab (CanClose=False)" Margin="0,12,0,0" />
+                    </ui:TabItem>
+                </ui:TabControl>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="CheckBox" Style="{StaticResource StackHeader}" />
+
+                <StackPanel>
+                    <CheckBox Content="Unchecked" Margin="0,0,0,8" />
+                    <CheckBox Content="Checked" IsChecked="True" Margin="0,0,0,8" />
+                    <CheckBox Content="Disabled" IsEnabled="False" />
+                </StackPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="RadioButton" Style="{StaticResource StackHeader}" />
+
+                <StackPanel>
+                    <RadioButton Content="Option one" IsChecked="True" Margin="0,0,0,8" />
+                    <RadioButton Content="Option two" Margin="0,0,0,8" />
+                    <RadioButton Content="Disabled" IsEnabled="False" />
+                </StackPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="ComboBox" Style="{StaticResource StackHeader}" />
+
+                <ComboBox Width="200" HorizontalAlignment="Left" SelectedIndex="0">
+                    <ComboBoxItem Content="First" />
+                    <ComboBoxItem Content="Second" />
+                    <ComboBoxItem Content="Third" />
+                </ComboBox>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="Menu" Style="{StaticResource StackHeader}" />
+
+                <StackPanel Orientation="Horizontal">
+                    <Menu VerticalAlignment="Top">
+                        <MenuItem Header="File">
+                            <MenuItem Header="New" InputGestureText="Ctrl+N" />
+                            <MenuItem Header="Open" InputGestureText="Ctrl+O" />
+                            <Separator />
+                            <MenuItem Header="Recent">
+                                <MenuItem Header="Project A" />
+                                <MenuItem Header="Project B" />
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem Header="Exit" />
+                        </MenuItem>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="Undo" InputGestureText="Ctrl+Z" />
+                            <MenuItem Header="Redo" InputGestureText="Ctrl+Y" IsEnabled="False" />
+                        </MenuItem>
+                    </Menu>
+
+                    <Border Margin="12,0,0,0"
+                            Padding="14,8"
+                            Background="{DynamicResource ControlBackground}"
+                            BorderBrush="{DynamicResource Border}"
+                            BorderThickness="1"
+                            CornerRadius="{DynamicResource Radius.S}">
+                        <TextBlock Text="Right-click me" Foreground="{DynamicResource Foreground.Muted}" />
+                        <Border.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Cut" InputGestureText="Ctrl+X">
+                                    <MenuItem.Icon>
+                                        <ui:Icon Kind="Scissors" Size="14" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="Copy" InputGestureText="Ctrl+C">
+                                    <MenuItem.Icon>
+                                        <ui:Icon Kind="Copy" Size="14" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="Paste" InputGestureText="Ctrl+V">
+                                    <MenuItem.Icon>
+                                        <ui:Icon Kind="Clipboard" Size="14" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="Delete">
+                                    <MenuItem.Icon>
+                                        <ui:Icon Kind="Trash" Size="14" Foreground="{DynamicResource Danger}" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+                        </Border.ContextMenu>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="Expander" Style="{StaticResource StackHeader}" />
+
+                <Expander Header="Details" IsExpanded="True" Width="320" HorizontalAlignment="Left">
+                    <TextBlock Text="Expandable content goes here." TextWrapping="Wrap" />
+                </Expander>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="GroupBox" Style="{StaticResource StackHeader}" />
+
+                <GroupBox Header="Settings" Width="320" HorizontalAlignment="Left">
+                    <TextBlock Text="Grouped content." TextWrapping="Wrap" />
+                </GroupBox>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="ListBox" Style="{StaticResource StackHeader}" />
+
+                <ListBox Width="220" Height="120" HorizontalAlignment="Left" SelectedIndex="1">
+                    <ListBoxItem Content="First item" />
+                    <ListBoxItem Content="Second item" />
+                    <ListBoxItem Content="Third item" />
+                    <ListBoxItem Content="Fourth item" />
+                </ListBox>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="ProgressBar" Style="{StaticResource StackHeader}" />
+
+                <StackPanel Width="260" HorizontalAlignment="Left">
+                    <ProgressBar Value="35" Margin="0,0,0,8" />
+                    <ProgressBar IsIndeterminate="True" />
+                </StackPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="TreeView" Style="{StaticResource StackHeader}" />
+
+                <TreeView Width="260" Height="160" HorizontalAlignment="Left">
+                    <TreeViewItem Header="Documents" IsExpanded="True">
+                        <TreeViewItem Header="Reports">
+                            <TreeViewItem Header="Q1.pdf" />
+                            <TreeViewItem Header="Q2.pdf" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Notes.txt" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="Pictures">
+                        <TreeViewItem Header="Photo.png" />
+                    </TreeViewItem>
+                </TreeView>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="Slider" Style="{StaticResource StackHeader}" />
+
+                <StackPanel Width="260" HorizontalAlignment="Left">
+                    <Slider Value="40" Margin="0,0,0,8" />
+                    <Slider Value="70" Minimum="0" Maximum="100" IsEnabled="False" />
+                </StackPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="ToolTip" Style="{StaticResource StackHeader}" />
+
+                <Border Padding="14,8"
+                        HorizontalAlignment="Left"
+                        Background="{DynamicResource ControlBackground}"
+                        BorderBrush="{DynamicResource Border}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource Radius.S}"
+                        ToolTip="Helpful hint text">
+                    <TextBlock Text="Hover me" Foreground="{DynamicResource Foreground.Muted}" />
+                </Border>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="Spinner" Style="{StaticResource StackHeader}" />
+
+                <StackPanel Orientation="Horizontal">
+                    <ui:Spinner Margin="0,0,16,0" />
+                    <ui:Spinner Width="32" Height="32" Foreground="{DynamicResource Foreground.Muted}" />
+                </StackPanel>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="DatePicker" Style="{StaticResource StackHeader}" />
+
+                <DatePicker Width="200" HorizontalAlignment="Left" />
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="Calendar" Style="{StaticResource StackHeader}" />
+
+                <Calendar HorizontalAlignment="Left" />
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="Dialog" Style="{StaticResource StackHeader}" />
+
+                <Border Padding="14,8"
+                        HorizontalAlignment="Left"
+                        Cursor="Hand"
+                        Background="{DynamicResource Accent}"
+                        CornerRadius="{DynamicResource Radius.S}"
+                        MouseLeftButtonUp="OnShowDialog">
+                    <TextBlock Text="Show dialog" Foreground="White" />
+                </Border>
+            </StackPanel>
+
+            <Separator />
+
+            <StackPanel Style="{StaticResource StackItem}">
+                <TextBlock Text="DataGrid" Style="{StaticResource StackHeader}" />
+
+                <DataGrid Width="420"
+                          Height="200"
+                          HorizontalAlignment="Left"
+                          AutoGenerateColumns="False"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          ItemsSource="{Binding People}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"
+                                            EditingElementStyle="{StaticResource DataGridTextBox}" />
+                        <DataGridComboBoxColumn Header="Role" Width="*"
+                                                SelectedItemBinding="{Binding Role}"
+                                                ItemsSource="{StaticResource Roles}"
+                                                ElementStyle="{StaticResource DataGridComboBox}"
+                                                EditingElementStyle="{StaticResource DataGridComboBox}" />
+                        <DataGridCheckBoxColumn Header="Active" Binding="{Binding Active}" Width="80"
+                                                ElementStyle="{StaticResource DataGridCheckBox}"
+                                                EditingElementStyle="{StaticResource DataGridCheckBox}" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </StackPanel>
     </ScrollViewer>

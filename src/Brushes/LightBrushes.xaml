@@ -2,9 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="Background" Color="#F8F9FA" />
-    <SolidColorBrush x:Key="Surface" Color="#FFFFFF" />
-    <SolidColorBrush x:Key="Titlebar" Color="#F6F7F9" />
-    <SolidColorBrush x:Key="Navigation" Color="#F3F4F7" />
+    <SolidColorBrush x:Key="ControlBackground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="PanelBackground" Color="#F6F7F9" />
     <SolidColorBrush x:Key="Border" Color="#E4E6EB" />
     <SolidColorBrush x:Key="Border.Hover" Color="#C8CAD1" />
     <SolidColorBrush x:Key="Foreground" Color="#1C1F2E" />
@@ -29,10 +28,7 @@
     <SolidColorBrush x:Key="Danger" Color="#EF4444" />
     <SolidColorBrush x:Key="Danger.Hover" Color="#DC2626" />
     <SolidColorBrush x:Key="Danger.Background" Color="#FEF2F2" />
-    <SolidColorBrush x:Key="Danger.Background.Pressed" Color="#FEE2E2" />
     <SolidColorBrush x:Key="Danger.Border" Color="#FECACA" />
-    <SolidColorBrush x:Key="Danger.Border.Hover" Color="#66EF4444" />
 
-    <SolidColorBrush x:Key="Icon.Tile" Color="#EEF0F5" />
     <SolidColorBrush x:Key="Overlay.Hover" Color="#0D000000" />
 </ResourceDictionary>

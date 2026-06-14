@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Thickness x:Key="Spacing.S">4</Thickness>
+    <Thickness x:Key="Spacing.S.Top">0,4,0,0</Thickness>
+    <Thickness x:Key="Spacing.S.Bottom">0,0,0,4</Thickness>
+    <Thickness x:Key="Spacing.S.Left">4,0,0,0</Thickness>
+    <Thickness x:Key="Spacing.S.Right">0,0,4,0</Thickness>
+    <Thickness x:Key="Spacing.S.Vertical">0,4,0,4</Thickness>
+    <Thickness x:Key="Spacing.S.Horizontal">4,0,4,0</Thickness>
+
+    <Thickness x:Key="Spacing.M">8</Thickness>
+    <Thickness x:Key="Spacing.M.Top">0,8,0,0</Thickness>
+    <Thickness x:Key="Spacing.M.Bottom">0,0,0,8</Thickness>
+    <Thickness x:Key="Spacing.M.Left">8,0,0,0</Thickness>
+    <Thickness x:Key="Spacing.M.Right">0,0,8,0</Thickness>
+    <Thickness x:Key="Spacing.M.Vertical">0,8,0,8</Thickness>
+    <Thickness x:Key="Spacing.M.Horizontal">8,0,8,0</Thickness>
+
+    <Thickness x:Key="Spacing.L">16</Thickness>
+    <Thickness x:Key="Spacing.L.Top">0,16,0,0</Thickness>
+    <Thickness x:Key="Spacing.L.Bottom">0,0,0,16</Thickness>
+    <Thickness x:Key="Spacing.L.Left">16,0,0,0</Thickness>
+    <Thickness x:Key="Spacing.L.Right">0,0,16,0</Thickness>
+    <Thickness x:Key="Spacing.L.Vertical">0,16,0,16</Thickness>
+    <Thickness x:Key="Spacing.L.Horizontal">16,0,16,0</Thickness>
+</ResourceDictionary>

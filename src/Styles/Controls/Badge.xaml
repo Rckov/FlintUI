@@ -6,7 +6,7 @@
         <Setter Property="FontSize" Value="{DynamicResource FontSize.S}" />
         <Setter Property="Foreground" Value="{DynamicResource Foreground.Muted}" />
         <Setter Property="FontWeight" Value="{DynamicResource FontWeight.Medium}" />
-        <Setter Property="Padding" Value="8,3" />
+        <Setter Property="Padding" Value="{DynamicResource Spacing.S}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Background" Value="{DynamicResource Border}" />
         <Setter Property="Template">

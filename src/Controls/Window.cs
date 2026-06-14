@@ -1,24 +1,26 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Shell;
 
 namespace FlintUI.Controls;
 
-[TemplatePart(Name = "PART_MinimizeButton", Type = typeof(Button))]
-[TemplatePart(Name = "PART_MaximizeButton", Type = typeof(Button))]
-[TemplatePart(Name = "PART_CloseButton", Type = typeof(Button))]
+[TemplatePart(Name = "PART_MinimizeButton", Type = typeof(System.Windows.Controls.Button))]
+[TemplatePart(Name = "PART_MaximizeButton", Type = typeof(System.Windows.Controls.Button))]
+[TemplatePart(Name = "PART_CloseButton", Type = typeof(System.Windows.Controls.Button))]
 public class Window : System.Windows.Window
 {
-	static Window()
-	{
-		DefaultStyleKeyProperty.OverrideMetadata(typeof(Window), new FrameworkPropertyMetadata(typeof(Window)));
-	}
+    private System.Windows.Controls.Button? _minimizeButton;
+    private System.Windows.Controls.Button? _maximizeButton;
+    private System.Windows.Controls.Button? _closeButton;
 
-	public Window()
-	{
-		SetResourceReference(StyleProperty, typeof(Window));
-		AddHandler(Button.ClickEvent, new RoutedEventHandler(OnWindowButtonClick));
-	}
+    static Window()
+    {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(Window), new FrameworkPropertyMetadata(typeof(Window)));
+    }
+
+    protected Window()
+    {
+        SetResourceReference(StyleProperty, typeof(Window));
+    }
 
 	public static readonly DependencyProperty SubtitleProperty =
 		DependencyProperty.Register(nameof(Subtitle), typeof(string), typeof(Window), new PropertyMetadata(null, OnSubtitleChanged));
@@ -38,13 +40,13 @@ public class Window : System.Windows.Window
 		set => SetValue(SubtitleProperty, value);
 	}
 
-	public object LeftContent
+	public object? LeftContent
 	{
 		get => GetValue(LeftContentProperty);
 		set => SetValue(LeftContentProperty, value);
 	}
 
-	public object RightContent
+	public object? RightContent
 	{
 		get => GetValue(RightContentProperty);
 		set => SetValue(RightContentProperty, value);
@@ -69,28 +71,51 @@ public class Window : System.Windows.Window
 		});
 	}
 
-	private void OnWindowButtonClick(object sender, RoutedEventArgs e)
+	public override void OnApplyTemplate()
 	{
-		if (e.OriginalSource is not Button btn)
-		{
-			return;
-		}
+	    base.OnApplyTemplate();
 
-		switch (btn.Name)
-		{
-			case "PART_MinimizeButton":
-			WindowState = WindowState.Minimized;
-			break;
+	    if (_closeButton is not null)
+	    {
+		    _closeButton.Click -= OnCloseClick;
+	    }
 
-			case "PART_MaximizeButton":
-			WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-			break;
+	    if (_minimizeButton is not null)
+	    {
+		    _minimizeButton.Click -= OnMinimizeClick;
+	    }
 
-			case "PART_CloseButton":
-			Close();
-			break;
-		}
+	    if (_maximizeButton is not null)
+	    {
+		    _maximizeButton.Click -= OnMaximizeClick;
+	    }
+
+	    _closeButton = GetTemplateChild("PART_CloseButton") as System.Windows.Controls.Button;
+	    _minimizeButton = GetTemplateChild("PART_MinimizeButton") as System.Windows.Controls.Button;
+	    _maximizeButton = GetTemplateChild("PART_MaximizeButton") as System.Windows.Controls.Button;
+
+	    if (_closeButton is not null)
+	    {
+		    _closeButton.Click += OnCloseClick;
+	    }
+
+	    if (_minimizeButton is not null)
+	    {
+		    _minimizeButton.Click += OnMinimizeClick;
+	    }
+
+	    if (_maximizeButton is not null)
+	    {
+		    _maximizeButton.Click += OnMaximizeClick;
+	    }
 	}
+
+	private void OnCloseClick(object sender, RoutedEventArgs e) => Close();
+
+	private void OnMinimizeClick(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
+
+	private void OnMaximizeClick(object sender, RoutedEventArgs e) =>
+	    WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
 
 	private static void OnSubtitleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 	{

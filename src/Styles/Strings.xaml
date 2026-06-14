@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <sys:String x:Key="Dialog.Ok">OK</sys:String>
+    <sys:String x:Key="Dialog.Cancel">Cancel</sys:String>
+    <sys:String x:Key="Dialog.Yes">Yes</sys:String>
+    <sys:String x:Key="Dialog.No">No</sys:String>
+
+    <sys:String x:Key="DatePicker.Watermark">Select a date</sys:String>
+</ResourceDictionary>
