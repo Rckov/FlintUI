@@ -1,18 +1,22 @@
-﻿namespace FlintUI.Example.Views;
+﻿using System.Windows.Input;
+using FlintUI.Controls;
+using FlintUI.Example.ViewModels;
+
+namespace FlintUI.Example.Views;
 
 /// <summary>
-/// Логика взаимодействия для MainView.xaml
+///     Логика взаимодействия для MainView.xaml
 /// </summary>
-public partial class MainView : Controls.Window
+public partial class MainView : Window
 {
-	public MainView()
-	{
-		InitializeComponent();
-		DataContext = new ViewModels.MainViewModel();
-	}
+    public MainView()
+    {
+        InitializeComponent();
+        DataContext = new MainViewModel();
+    }
 
-	private void OnShowDialog(object sender, System.Windows.Input.MouseButtonEventArgs e)
-	{
-		Controls.Dialog.Show("Save changes before closing?", "Confirm", Controls.DialogButton.YesNoCancel, Controls.DialogIcon.Question, this);
-	}
+    private void OnShowDialog(object sender, MouseButtonEventArgs e)
+    {
+        Dialog.Show("Save changes before closing?", "Confirm", DialogButton.YesNoCancel, DialogIcon.Question, this);
+    }
 }

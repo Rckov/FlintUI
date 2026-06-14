@@ -68,7 +68,8 @@
                                             </Border>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter TargetName="Border" Property="Background" Value="{DynamicResource Overlay.Hover}" />
+                                                    <Setter TargetName="Border" Property="Background"
+                                                            Value="{DynamicResource Overlay.Hover}" />
                                                 </Trigger>
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>
@@ -102,7 +103,8 @@
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter TargetName="PART_Border" Property="BorderBrush" Value="{DynamicResource Danger}" />
-                            <Setter TargetName="PART_Border" Property="Background" Value="{DynamicResource Danger.Background}" />
+                            <Setter TargetName="PART_Border" Property="Background"
+                                    Value="{DynamicResource Danger.Background}" />
                             <Setter TargetName="PART_ErrorText" Property="Visibility" Value="Visible" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">

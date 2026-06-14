@@ -163,10 +163,12 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
-                            <Button x:Name="PART_PreviousButton" Grid.Column="0" Style="{StaticResource CalendarNavButton}">
+                            <Button x:Name="PART_PreviousButton" Grid.Column="0"
+                                    Style="{StaticResource CalendarNavButton}">
                                 <ct:Icon Kind="ChevronLeft" Size="14" Foreground="{DynamicResource Foreground.Muted}" />
                             </Button>
-                            <Button x:Name="PART_HeaderButton" Grid.Column="1" Style="{StaticResource CalendarHeaderButton}" />
+                            <Button x:Name="PART_HeaderButton" Grid.Column="1"
+                                    Style="{StaticResource CalendarHeaderButton}" />
                             <Button x:Name="PART_NextButton" Grid.Column="2" Style="{StaticResource CalendarNavButton}">
                                 <ct:Icon Kind="ChevronRight" Size="14" Foreground="{DynamicResource Foreground.Muted}" />
                             </Button>
@@ -208,11 +210,15 @@
                         </Grid>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type Calendar}}}" Value="Year">
+                        <DataTrigger
+                            Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type Calendar}}}"
+                            Value="Year">
                             <Setter TargetName="PART_MonthView" Property="Visibility" Value="Hidden" />
                             <Setter TargetName="PART_YearView" Property="Visibility" Value="Visible" />
                         </DataTrigger>
-                        <DataTrigger Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type Calendar}}}" Value="Decade">
+                        <DataTrigger
+                            Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType={x:Type Calendar}}}"
+                            Value="Decade">
                             <Setter TargetName="PART_MonthView" Property="Visibility" Value="Hidden" />
                             <Setter TargetName="PART_YearView" Property="Visibility" Value="Visible" />
                         </DataTrigger>

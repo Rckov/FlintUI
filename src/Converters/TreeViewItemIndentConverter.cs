@@ -18,15 +18,14 @@ public class TreeViewItemIndentConverter : IValueConverter
         while (element is not null and not TreeView)
         {
             element = VisualTreeHelper.GetParent(element);
-            if (element is TreeViewItem)
-            {
-                left += Indent;
-            }
+            if (element is TreeViewItem) left += Indent;
         }
 
         return new Thickness(left, 0, 0, 0);
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-        => throw new NotSupportedException();
+    {
+        throw new NotSupportedException();
+    }
 }

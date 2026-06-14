@@ -37,9 +37,26 @@ public enum DialogIcon
 [TemplatePart(Name = "PART_No", Type = typeof(ButtonBase))]
 public class DialogWindow : Window
 {
+    public static readonly DependencyProperty CaptionProperty =
+        DependencyProperty.Register(nameof(Caption), typeof(string), typeof(DialogWindow),
+            new PropertyMetadata(string.Empty));
+
+    public static readonly DependencyProperty MessageProperty =
+        DependencyProperty.Register(nameof(Message), typeof(string), typeof(DialogWindow),
+            new PropertyMetadata(string.Empty));
+
+    public static readonly DependencyProperty ButtonsProperty =
+        DependencyProperty.Register(nameof(Buttons), typeof(DialogButton), typeof(DialogWindow),
+            new PropertyMetadata(DialogButton.Ok));
+
+    public static readonly DependencyProperty SymbolProperty =
+        DependencyProperty.Register(nameof(Symbol), typeof(DialogIcon), typeof(DialogWindow),
+            new PropertyMetadata(DialogIcon.None));
+
     static DialogWindow()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(DialogWindow), new FrameworkPropertyMetadata(typeof(DialogWindow)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(DialogWindow),
+            new FrameworkPropertyMetadata(typeof(DialogWindow)));
     }
 
     public DialogWindow()
@@ -52,18 +69,6 @@ public class DialogWindow : Window
         Background = Brushes.Transparent;
         SetResourceReference(StyleProperty, typeof(DialogWindow));
     }
-
-    public static readonly DependencyProperty CaptionProperty =
-        DependencyProperty.Register(nameof(Caption), typeof(string), typeof(DialogWindow), new PropertyMetadata(string.Empty));
-
-    public static readonly DependencyProperty MessageProperty =
-        DependencyProperty.Register(nameof(Message), typeof(string), typeof(DialogWindow), new PropertyMetadata(string.Empty));
-
-    public static readonly DependencyProperty ButtonsProperty =
-        DependencyProperty.Register(nameof(Buttons), typeof(DialogButton), typeof(DialogWindow), new PropertyMetadata(DialogButton.Ok));
-
-    public static readonly DependencyProperty SymbolProperty =
-        DependencyProperty.Register(nameof(Symbol), typeof(DialogIcon), typeof(DialogWindow), new PropertyMetadata(DialogIcon.None));
 
     public string Caption
     {
@@ -95,28 +100,27 @@ public class DialogWindow : Window
     {
         base.OnApplyTemplate();
 
-        Wire("PART_Ok", global::FlintUI.Controls.DialogResult.Ok);
-        Wire("PART_Cancel", global::FlintUI.Controls.DialogResult.Cancel);
-        Wire("PART_Yes", global::FlintUI.Controls.DialogResult.Yes);
-        Wire("PART_No", global::FlintUI.Controls.DialogResult.No);
+        Wire("PART_Ok", Controls.DialogResult.Ok);
+        Wire("PART_Cancel", Controls.DialogResult.Cancel);
+        Wire("PART_Yes", Controls.DialogResult.Yes);
+        Wire("PART_No", Controls.DialogResult.No);
     }
 
     private void Wire(string part, DialogResult result)
     {
         if (GetTemplateChild(part) is ButtonBase button)
-        {
             button.Click += (_, _) =>
             {
                 Result = result;
                 Close();
             };
-        }
     }
 }
 
 public static class Dialog
 {
-    public static DialogResult Show(string message, string caption = "", DialogButton buttons = DialogButton.Ok, DialogIcon icon = DialogIcon.None, Window? owner = null)
+    public static DialogResult Show(string message, string caption = "", DialogButton buttons = DialogButton.Ok,
+        DialogIcon icon = DialogIcon.None, Window? owner = null)
     {
         var dialog = new DialogWindow
         {
@@ -127,7 +131,8 @@ public static class Dialog
             Owner = owner ?? Application.Current?.Windows.OfType<Window>().FirstOrDefault(window => window.IsActive)
         };
 
-        dialog.WindowStartupLocation = dialog.Owner is null ? WindowStartupLocation.CenterScreen : WindowStartupLocation.CenterOwner;
+        dialog.WindowStartupLocation =
+            dialog.Owner is null ? WindowStartupLocation.CenterScreen : WindowStartupLocation.CenterOwner;
         dialog.ShowDialog();
 
         return dialog.Result;

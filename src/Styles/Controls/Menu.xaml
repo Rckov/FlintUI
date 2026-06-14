@@ -47,7 +47,7 @@
                                                   VerticalAlignment="Center"
                                                   RecognizesAccessKey="True" />
 
-                                <TextBlock x:Name="IGT"
+                                <TextBlock x:Name="InputGestureText"
                                            Grid.Column="2"
                                            Text="{TemplateBinding InputGestureText}"
                                            Foreground="{DynamicResource Foreground.Muted}"
@@ -90,7 +90,7 @@
                             <Setter TargetName="Icon" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="InputGestureText" Value="">
-                            <Setter TargetName="IGT" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="InputGestureText" Property="Visibility" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="Role" Value="TopLevelHeader">
                             <Setter TargetName="Bd" Property="Padding" Value="10,6" />

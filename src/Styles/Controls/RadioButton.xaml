@@ -41,7 +41,8 @@
                                 <Condition Property="IsMouseOver" Value="True" />
                                 <Condition Property="IsChecked" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Indicator" Property="BorderBrush" Value="{DynamicResource Border.Hover}" />
+                            <Setter TargetName="Indicator" Property="BorderBrush"
+                                    Value="{DynamicResource Border.Hover}" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -49,7 +50,8 @@
                                 <Condition Property="IsChecked" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="Indicator" Property="Background" Value="{DynamicResource Accent.Hover}" />
-                            <Setter TargetName="Indicator" Property="BorderBrush" Value="{DynamicResource Accent.Hover}" />
+                            <Setter TargetName="Indicator" Property="BorderBrush"
+                                    Value="{DynamicResource Accent.Hover}" />
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.4" />

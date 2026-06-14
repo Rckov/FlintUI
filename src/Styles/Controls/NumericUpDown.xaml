@@ -44,15 +44,17 @@
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="{x:Type RepeatButton}">
-                                        <Border x:Name="PART_Bg" Background="{TemplateBinding Background}">
+                                        <Border x:Name="PART_Background" Background="{TemplateBinding Background}">
                                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="PART_Bg" Property="Background" Value="{DynamicResource Overlay.Hover}" />
+                                                <Setter TargetName="PART_Background" Property="Background"
+                                                        Value="{DynamicResource Overlay.Hover}" />
                                             </Trigger>
                                             <Trigger Property="IsPressed" Value="True">
-                                                <Setter TargetName="PART_Bg" Property="Background" Value="{DynamicResource Border}" />
+                                                <Setter TargetName="PART_Background" Property="Background"
+                                                        Value="{DynamicResource Border}" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>

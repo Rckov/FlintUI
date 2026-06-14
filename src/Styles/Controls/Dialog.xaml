@@ -26,10 +26,12 @@
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Accent.Hover}" />
+                                                <Setter TargetName="Bd" Property="Background"
+                                                        Value="{DynamicResource Accent.Hover}" />
                                             </Trigger>
                                             <Trigger Property="IsPressed" Value="True">
-                                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Accent.Pressed}" />
+                                                <Setter TargetName="Bd" Property="Background"
+                                                        Value="{DynamicResource Accent.Pressed}" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
@@ -56,7 +58,8 @@
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Border}" />
+                                                <Setter TargetName="Bd" Property="Background"
+                                                        Value="{DynamicResource Border}" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
@@ -84,7 +87,7 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
 
-                            <ct:Icon x:Name="DialogIconCtl"
+                            <ct:Icon x:Name="DialogIcon"
                                      Grid.Column="0"
                                      Grid.Row="0"
                                      Grid.RowSpan="2"
@@ -114,10 +117,14 @@
                                         Orientation="Horizontal"
                                         HorizontalAlignment="Right"
                                         Margin="{DynamicResource Spacing.L.Top}">
-                                <Button x:Name="PART_Cancel" Content="{DynamicResource Dialog.Cancel}" IsCancel="True" Visibility="Collapsed" Style="{StaticResource DialogSecondary}" />
-                                <Button x:Name="PART_No" Content="{DynamicResource Dialog.No}" IsCancel="True" Visibility="Collapsed" Style="{StaticResource DialogSecondary}" />
-                                <Button x:Name="PART_Yes" Content="{DynamicResource Dialog.Yes}" IsDefault="True" Visibility="Collapsed" Style="{StaticResource DialogPrimary}" />
-                                <Button x:Name="PART_Ok" Content="{DynamicResource Dialog.Ok}" IsDefault="True" Visibility="Collapsed" Style="{StaticResource DialogPrimary}" />
+                                <Button x:Name="PART_Cancel" Content="{DynamicResource Dialog.Cancel}" IsCancel="True"
+                                        Visibility="Collapsed" Style="{StaticResource DialogSecondary}" />
+                                <Button x:Name="PART_No" Content="{DynamicResource Dialog.No}" Visibility="Collapsed"
+                                        Style="{StaticResource DialogSecondary}" />
+                                <Button x:Name="PART_Yes" Content="{DynamicResource Dialog.Yes}" IsDefault="True"
+                                        Visibility="Collapsed" Style="{StaticResource DialogPrimary}" />
+                                <Button x:Name="PART_Ok" Content="{DynamicResource Dialog.Ok}" IsDefault="True"
+                                        Visibility="Collapsed" Style="{StaticResource DialogPrimary}" />
                             </StackPanel>
                         </Grid>
                     </Border>
@@ -142,31 +149,34 @@
                             <Setter TargetName="PART_No" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_Cancel" Property="Visibility" Value="Visible" />
                         </Trigger>
+                        <Trigger Property="Buttons" Value="YesNo">
+                            <Setter TargetName="PART_No" Property="IsCancel" Value="True" />
+                        </Trigger>
 
                         <Trigger Property="Symbol" Value="Info">
-                            <Setter TargetName="DialogIconCtl" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="DialogIconCtl" Property="Kind" Value="Info" />
-                            <Setter TargetName="DialogIconCtl" Property="Foreground" Value="{DynamicResource Accent}" />
+                            <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="DialogIcon" Property="Kind" Value="Info" />
+                            <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Accent}" />
                         </Trigger>
                         <Trigger Property="Symbol" Value="Success">
-                            <Setter TargetName="DialogIconCtl" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="DialogIconCtl" Property="Kind" Value="CheckCircle" />
-                            <Setter TargetName="DialogIconCtl" Property="Foreground" Value="{DynamicResource Success}" />
+                            <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="DialogIcon" Property="Kind" Value="CheckCircle" />
+                            <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Success}" />
                         </Trigger>
                         <Trigger Property="Symbol" Value="Warning">
-                            <Setter TargetName="DialogIconCtl" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="DialogIconCtl" Property="Kind" Value="Warning" />
-                            <Setter TargetName="DialogIconCtl" Property="Foreground" Value="{DynamicResource Warning}" />
+                            <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="DialogIcon" Property="Kind" Value="Warning" />
+                            <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Warning}" />
                         </Trigger>
                         <Trigger Property="Symbol" Value="Error">
-                            <Setter TargetName="DialogIconCtl" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="DialogIconCtl" Property="Kind" Value="XCircle" />
-                            <Setter TargetName="DialogIconCtl" Property="Foreground" Value="{DynamicResource Danger}" />
+                            <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="DialogIcon" Property="Kind" Value="XCircle" />
+                            <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Danger}" />
                         </Trigger>
                         <Trigger Property="Symbol" Value="Question">
-                            <Setter TargetName="DialogIconCtl" Property="Visibility" Value="Visible" />
-                            <Setter TargetName="DialogIconCtl" Property="Kind" Value="HelpCircle" />
-                            <Setter TargetName="DialogIconCtl" Property="Foreground" Value="{DynamicResource Accent}" />
+                            <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="DialogIcon" Property="Kind" Value="HelpCircle" />
+                            <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Accent}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

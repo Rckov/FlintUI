@@ -73,7 +73,7 @@
                                         Cursor="Hand">
                                     <Button.Template>
                                         <ControlTemplate TargetType="{x:Type Button}">
-                                            <Border x:Name="ButtonBd"
+                                            <Border x:Name="ButtonBorder"
                                                     Background="Transparent"
                                                     CornerRadius="{DynamicResource Radius.X}">
                                                 <ct:Icon Kind="Calendar"
@@ -82,7 +82,8 @@
                                             </Border>
                                             <ControlTemplate.Triggers>
                                                 <Trigger Property="IsMouseOver" Value="True">
-                                                    <Setter TargetName="ButtonBd" Property="Background" Value="{DynamicResource Overlay.Hover}" />
+                                                    <Setter TargetName="ButtonBorder" Property="Background"
+                                                            Value="{DynamicResource Overlay.Hover}" />
                                                 </Trigger>
                                             </ControlTemplate.Triggers>
                                         </ControlTemplate>

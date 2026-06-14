@@ -58,7 +58,8 @@
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Overlay.Hover}" />
+                                                <Setter TargetName="Bd" Property="Background"
+                                                        Value="{DynamicResource Overlay.Hover}" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
@@ -69,18 +70,24 @@
                     <ControlTemplate.Triggers>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding CloseButton, RelativeSource={RelativeSource AncestorType={x:Type ct:TabControl}}}" Value="True" />
-                                <Condition Binding="{Binding CanClose, RelativeSource={RelativeSource Self}}" Value="True" />
+                                <Condition
+                                    Binding="{Binding CloseButton, RelativeSource={RelativeSource AncestorType={x:Type ct:TabControl}}}"
+                                    Value="True" />
+                                <Condition Binding="{Binding CanClose, RelativeSource={RelativeSource Self}}"
+                                           Value="True" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="CloseButton" Property="Visibility" Value="Visible" />
                         </MultiDataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="PART_Border" Property="BorderBrush" Value="{DynamicResource Border.Hover}" />
-                            <Setter TargetName="PART_Content" Property="TextElement.Foreground" Value="{DynamicResource Foreground}" />
+                            <Setter TargetName="PART_Border" Property="BorderBrush"
+                                    Value="{DynamicResource Border.Hover}" />
+                            <Setter TargetName="PART_Content" Property="TextElement.Foreground"
+                                    Value="{DynamicResource Foreground}" />
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Setter TargetName="PART_Border" Property="BorderBrush" Value="{DynamicResource Accent}" />
-                            <Setter TargetName="PART_Content" Property="TextElement.Foreground" Value="{DynamicResource Accent}" />
+                            <Setter TargetName="PART_Content" Property="TextElement.Foreground"
+                                    Value="{DynamicResource Accent}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.4" />

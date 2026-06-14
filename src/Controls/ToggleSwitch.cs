@@ -7,6 +7,7 @@ public class ToggleSwitch : ToggleButton
 {
     static ToggleSwitch()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(ToggleSwitch), new FrameworkPropertyMetadata(typeof(ToggleSwitch)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ToggleSwitch),
+            new FrameworkPropertyMetadata(typeof(ToggleSwitch)));
     }
 }
