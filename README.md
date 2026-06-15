@@ -1,5 +1,5 @@
 ﻿[![.NET](https://img.shields.io/badge/.NET-4.8%20%7C%206%20%7C%208%20%7C%2010-512BD4)](https://dotnet.microsoft.com/)
-[![Build and Release](https://github.com/Rckov/FlintUI/actions/workflows/release.yml/badge.svg)](https://github.com/Rckov/FlintUI/actions/workflows/release.yml)
+[![Build and Release](https://github.com/Rckov/FlintUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/Rckov/FlintUI/actions/workflows/release.yml)
 [![NuGet](https://img.shields.io/nuget/v/FlintUI.svg?label=NuGet)](https://www.nuget.org/packages/FlintUI)
 
 <img src="examples/Resources/icon.ico" width="45" height="45" align="left">
