@@ -76,21 +76,39 @@ public class Window : System.Windows.Window
     {
         base.OnApplyTemplate();
 
-        if (_closeButton is not null) _closeButton.Click -= OnCloseClick;
+        if (_closeButton is not null)
+        {
+            _closeButton.Click -= OnCloseClick;
+        }
 
-        if (_minimizeButton is not null) _minimizeButton.Click -= OnMinimizeClick;
+        if (_minimizeButton is not null)
+        {
+            _minimizeButton.Click -= OnMinimizeClick;
+        }
 
-        if (_maximizeButton is not null) _maximizeButton.Click -= OnMaximizeClick;
+        if (_maximizeButton is not null)
+        {
+            _maximizeButton.Click -= OnMaximizeClick;
+        }
 
         _closeButton = GetTemplateChild("PART_CloseButton") as System.Windows.Controls.Button;
         _minimizeButton = GetTemplateChild("PART_MinimizeButton") as System.Windows.Controls.Button;
         _maximizeButton = GetTemplateChild("PART_MaximizeButton") as System.Windows.Controls.Button;
 
-        if (_closeButton is not null) _closeButton.Click += OnCloseClick;
+        if (_closeButton is not null)
+        {
+            _closeButton.Click += OnCloseClick;
+        }
 
-        if (_minimizeButton is not null) _minimizeButton.Click += OnMinimizeClick;
+        if (_minimizeButton is not null)
+        {
+            _minimizeButton.Click += OnMinimizeClick;
+        }
 
-        if (_maximizeButton is not null) _maximizeButton.Click += OnMaximizeClick;
+        if (_maximizeButton is not null)
+        {
+            _maximizeButton.Click += OnMaximizeClick;
+        }
     }
 
     private void OnCloseClick(object sender, RoutedEventArgs e)
@@ -110,6 +128,9 @@ public class Window : System.Windows.Window
 
     private static void OnSubtitleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        if (d is Window window) window.HasSubtitle = !string.IsNullOrWhiteSpace(e.NewValue as string);
+        if (d is Window window)
+        {
+            window.HasSubtitle = !string.IsNullOrWhiteSpace(e.NewValue as string);
+        }
     }
 }

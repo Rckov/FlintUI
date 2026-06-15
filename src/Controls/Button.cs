@@ -2,6 +2,14 @@
 
 namespace FlintUI.Controls;
 
+public enum ButtonKind
+{
+    Default,
+    Accent,
+    Danger,
+    Ghost
+}
+
 public class Button : System.Windows.Controls.Button
 {
     public static readonly DependencyProperty ButtonKindProperty =
@@ -41,8 +49,7 @@ public class Button : System.Windows.Controls.Button
         set => SetValue(IconProperty, value);
     }
 
-    public bool HasIcon =>
-        (bool)GetValue(HasIconProperty);
+    public bool HasIcon => (bool)GetValue(HasIconProperty);
 
     public double IconSize
     {
@@ -63,12 +70,4 @@ public class Button : System.Windows.Controls.Button
 
         button.SetValue(HasIconPropertyKey, hasIcon);
     }
-}
-
-public enum ButtonKind
-{
-    Default,
-    Accent,
-    Danger,
-    Ghost
 }

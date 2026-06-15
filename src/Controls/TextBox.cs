@@ -61,11 +61,17 @@ public class TextBox : System.Windows.Controls.TextBox
     {
         base.OnApplyTemplate();
 
-        if (_clearButton is not null) _clearButton.Click -= OnClearClick;
+        if (_clearButton is not null)
+        {
+            _clearButton.Click -= OnClearClick;
+        }
 
         _clearButton = GetTemplateChild("PART_ClearButton") as ButtonBase;
 
-        if (_clearButton is not null) _clearButton.Click += OnClearClick;
+        if (_clearButton is not null)
+        {
+            _clearButton.Click += OnClearClick;
+        }
     }
 
     private void OnClearClick(object sender, RoutedEventArgs e)

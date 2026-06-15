@@ -44,21 +44,29 @@ public class Icon : Control
 
     private static void OnKindChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        if (d is not Icon icon) return;
+        if (d is not Icon icon)
+        {
+            return;
+        }
 
         icon.Data = ResolveGeometry((IconKind)e.NewValue);
     }
 
     private static Geometry? ResolveGeometry(IconKind kind)
     {
-        if (kind == IconKind.None) return null;
+        if (kind == IconKind.None)
+        {
+            return null;
+        }
 
         var key = $"Icon.{kind}";
         var geometry = Application.Current?.TryFindResource(key) as Geometry;
 
 #if DEBUG
         if (geometry is null && Application.Current is not null)
-            Debug.WriteLine($"[FlintUI] Icon resource '{key}' not found.");
+        {
+            Debug.WriteLine($"Icon resource '{key}' not found.");
+        }
 #endif
 
         return geometry;

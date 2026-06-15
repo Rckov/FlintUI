@@ -4,9 +4,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace FlintUI.Converters;
+namespace FlintUI.Themes.Converters;
 
-public class TreeViewItemIndentConverter : IValueConverter
+public class TreeIndentConverter : IValueConverter
 {
     private double Indent => 16d;
 
@@ -18,7 +18,10 @@ public class TreeViewItemIndentConverter : IValueConverter
         while (element is not null and not TreeView)
         {
             element = VisualTreeHelper.GetParent(element);
-            if (element is TreeViewItem) left += Indent;
+            if (element is TreeViewItem)
+            {
+                left += Indent;
+            }
         }
 
         return new Thickness(left, 0, 0, 0);

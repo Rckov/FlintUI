@@ -66,11 +66,17 @@ public class PasswordBox : Control
     {
         base.OnApplyTemplate();
 
-        if (_passwordBox is not null) _passwordBox.PasswordChanged -= OnPasswordBoxChanged;
+        if (_passwordBox is not null)
+        {
+            _passwordBox.PasswordChanged -= OnPasswordBoxChanged;
+        }
 
         _passwordBox = GetTemplateChild("PART_PasswordBox") as System.Windows.Controls.PasswordBox;
 
-        if (_passwordBox is not null) _passwordBox.PasswordChanged += OnPasswordBoxChanged;
+        if (_passwordBox is not null)
+        {
+            _passwordBox.PasswordChanged += OnPasswordBoxChanged;
+        }
 
         OnPasswordChanged(Password);
     }
@@ -82,7 +88,10 @@ public class PasswordBox : Control
 
     private void OnPasswordChanged(string value)
     {
-        if (_passwordBox is not null && _passwordBox.Password != value) _passwordBox.Password = value;
+        if (_passwordBox is not null && _passwordBox.Password != value)
+        {
+            _passwordBox.Password = value;
+        }
 
         SetValue(HasTextPropertyKey, value.Length > 0);
     }

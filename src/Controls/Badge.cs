@@ -3,6 +3,15 @@ using System.Windows.Controls;
 
 namespace FlintUI.Controls;
 
+public enum BadgeType
+{
+    Default,
+    Accent,
+    Success,
+    Warning,
+    Danger
+}
+
 public class Badge : ContentControl
 {
     public static readonly DependencyProperty BadgeTypeProperty = DependencyProperty
@@ -18,13 +27,4 @@ public class Badge : ContentControl
         get => (BadgeType)GetValue(BadgeTypeProperty);
         set => SetValue(BadgeTypeProperty, value);
     }
-}
-
-public enum BadgeType
-{
-    Default,
-    Accent,
-    Success,
-    Warning,
-    Danger
 }

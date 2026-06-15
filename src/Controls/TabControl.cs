@@ -49,19 +49,36 @@ public class TabControl : System.Windows.Controls.TabControl
 
     private void OnCloseTabExecuted(object sender, ExecutedRoutedEventArgs e)
     {
-        if (e.Parameter is not TabItem tab) return;
+        if (e.Parameter is not TabItem tab)
+        {
+            return;
+        }
 
         var item = ItemContainerGenerator.ItemFromContainer(tab);
-        if (item == DependencyProperty.UnsetValue) item = tab;
+        if (item == DependencyProperty.UnsetValue)
+        {
+            item = tab;
+        }
 
-        if (CloseTabCommand is { } command && !command.CanExecute(item)) return;
+        if (CloseTabCommand is { } command && !command.CanExecute(item))
+        {
+            return;
+        }
 
         var args = new TabClosingEventArgs(TabClosingEvent, this, item);
         RaiseEvent(args);
-        if (args.Cancel) return;
+        if (args.Cancel)
+        {
+            return;
+        }
 
         if (CloseTabCommand is not null)
+        {
             CloseTabCommand.Execute(item);
-        else if (ItemsSource is null && Items.Contains(item)) Items.Remove(item);
+        }
+        else if (ItemsSource is null && Items.Contains(item))
+        {
+            Items.Remove(item);
+        }
     }
 }

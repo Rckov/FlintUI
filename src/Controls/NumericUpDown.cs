@@ -83,9 +83,15 @@ public class NumericUpDown : Control
             _textBox.GotKeyboardFocus -= OnTextBoxGotFocus;
         }
 
-        if (_upButton is not null) _upButton.Click -= OnUpClick;
+        if (_upButton is not null)
+        {
+            _upButton.Click -= OnUpClick;
+        }
 
-        if (_downButton is not null) _downButton.Click -= OnDownClick;
+        if (_downButton is not null)
+        {
+            _downButton.Click -= OnDownClick;
+        }
 
         _textBox = GetTemplateChild("PART_TextBox") as System.Windows.Controls.TextBox;
         _upButton = GetTemplateChild("PART_UpButton") as RepeatButton;
@@ -98,16 +104,25 @@ public class NumericUpDown : Control
             _textBox.GotKeyboardFocus += OnTextBoxGotFocus;
         }
 
-        if (_upButton is not null) _upButton.Click += OnUpClick;
+        if (_upButton is not null)
+        {
+            _upButton.Click += OnUpClick;
+        }
 
-        if (_downButton is not null) _downButton.Click += OnDownClick;
+        if (_downButton is not null)
+        {
+            _downButton.Click += OnDownClick;
+        }
 
         UpdateText();
     }
 
     protected override void OnPreviewMouseWheel(MouseWheelEventArgs e)
     {
-        if (!IsKeyboardFocusWithin) return;
+        if (!IsKeyboardFocusWithin)
+        {
+            return;
+        }
 
         Spin(e.Delta > 0 ? Step : -Step);
         e.Handled = true;
@@ -122,13 +137,20 @@ public class NumericUpDown : Control
     private double CoerceToRange(double value)
     {
         var max = Math.Max(Minimum, Maximum);
-        if (value < Minimum) return Minimum;
+        if (value < Minimum)
+        {
+            return Minimum;
+        }
+
         return value > max ? max : value;
     }
 
     private void UpdateText()
     {
-        if (_textBox is null) return;
+        if (_textBox is null)
+        {
+            return;
+        }
 
         _textBox.Text = string.IsNullOrEmpty(StringFormat)
             ? Value.ToString(CultureInfo.CurrentCulture)
@@ -137,12 +159,19 @@ public class NumericUpDown : Control
 
     private void CommitText()
     {
-        if (_textBox is null) return;
+        if (_textBox is null)
+        {
+            return;
+        }
 
         if (double.TryParse(_textBox.Text, NumberStyles.Any, CultureInfo.CurrentCulture, out var parsed))
+        {
             Value = parsed;
+        }
         else
+        {
             UpdateText();
+        }
     }
 
     private void OnTextBoxLostFocus(object sender, RoutedEventArgs e)

@@ -70,7 +70,7 @@ public class DialogWindow : Window
         SetResourceReference(StyleProperty, typeof(DialogWindow));
     }
 
-    public string Caption
+    public string? Caption
     {
         get => (string)GetValue(CaptionProperty);
         set => SetValue(CaptionProperty, value);
@@ -109,17 +109,19 @@ public class DialogWindow : Window
     private void Wire(string part, DialogResult result)
     {
         if (GetTemplateChild(part) is ButtonBase button)
+        {
             button.Click += (_, _) =>
             {
                 Result = result;
                 Close();
             };
+        }
     }
 }
 
 public static class Dialog
 {
-    public static DialogResult Show(string message, string caption = "", DialogButton buttons = DialogButton.Ok,
+    public static DialogResult Show(string message, string? caption = null, DialogButton buttons = DialogButton.Ok,
         DialogIcon icon = DialogIcon.None, Window? owner = null)
     {
         var dialog = new DialogWindow
@@ -131,8 +133,9 @@ public static class Dialog
             Owner = owner ?? Application.Current?.Windows.OfType<Window>().FirstOrDefault(window => window.IsActive)
         };
 
-        dialog.WindowStartupLocation =
-            dialog.Owner is null ? WindowStartupLocation.CenterScreen : WindowStartupLocation.CenterOwner;
+        dialog.WindowStartupLocation = dialog.Owner is null
+            ? WindowStartupLocation.CenterScreen
+            : WindowStartupLocation.CenterOwner;
         dialog.ShowDialog();
 
         return dialog.Result;
