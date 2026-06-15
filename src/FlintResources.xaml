@@ -2,7 +2,6 @@
 
     <ResourceDictionary.MergedDictionaries>
 
-        <ResourceDictionary Source="Themes/Brushes/LightBrushes.xaml" />
         <ResourceDictionary Source="Icons/Geometry.xaml" />
 
         <!--#region DEFAULT -->

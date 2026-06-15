@@ -8,8 +8,8 @@
         <Setter Property="Foreground" Value="{DynamicResource Foreground}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="{DynamicResource Radius.S}" />
-        <Setter Property="Padding" Value="{DynamicResource Spacing.X.Vertical}" />
-        <Setter Property="FontSize" Value="{DynamicResource FontSize.M}" />
+        <Setter Property="Padding" Value="{DynamicResource Spacing.M.Vertical}" />
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.S}" />
         <Setter Property="FontWeight" Value="{DynamicResource FontWeight.Medium}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -134,16 +134,16 @@
             <Trigger Property="ButtonKind" Value="Accent">
                 <Setter Property="Background" Value="{DynamicResource Accent}" />
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="BorderBrush" Value="Transparent" />
             </Trigger>
             <Trigger Property="ButtonKind" Value="Danger">
                 <Setter Property="Background" Value="{DynamicResource Danger}" />
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="BorderBrush" Value="Transparent" />
             </Trigger>
             <Trigger Property="ButtonKind" Value="Ghost">
                 <Setter Property="Background" Value="Transparent" />
-                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="BorderBrush" Value="Transparent" />
             </Trigger>
         </Style.Triggers>
     </Style>

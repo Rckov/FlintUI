@@ -13,7 +13,7 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="Settings" 
+            <TextBlock Text="Settings"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Margin="{DynamicResource Spacing.M.Top}" HorizontalAlignment="Left">

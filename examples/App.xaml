@@ -4,11 +4,12 @@
              xmlns:ui="clr-namespace:FlintUI;assembly=FlintUI"
              xmlns:c="clr-namespace:FlintUI.Example.Controls"
              xmlns:avalon="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI"
              StartupUri="Views/ShellView.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:FlintResources />
+                <ui:FlintResources Theme="Light" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style TargetType="{x:Type c:ExampleView}">
@@ -30,22 +31,65 @@
                                         BorderBrush="{DynamicResource Border}"
                                         BorderThickness="0,1,0,0"
                                         Padding="{DynamicResource Spacing.M}">
-                                    <Expander Header="XAML" IsExpanded="True">
+                                    <Expander>
+                                        <Expander.Header>
+                                            <TextBlock Text="XAML" FontWeight="{DynamicResource FontWeight.Medium}" />
+                                        </Expander.Header>
+
                                         <Border Background="{DynamicResource ControlBackground}"
                                                 BorderBrush="{DynamicResource Border}"
                                                 BorderThickness="1"
                                                 CornerRadius="{DynamicResource Radius.S}"
-                                                Margin="{DynamicResource Spacing.S.Top}">
-                                            <avalon:TextEditor x:Name="PART_Editor"
-                                                               IsReadOnly="True"
-                                                               SyntaxHighlighting="XML"
-                                                               FontFamily="{DynamicResource Font.Mono}"
-                                                               FontSize="{DynamicResource FontSize.S}"
-                                                               Background="Transparent"
-                                                               Padding="8"
-                                                               MaxHeight="200"
-                                                               HorizontalScrollBarVisibility="Auto"
-                                                               VerticalScrollBarVisibility="Auto" />
+                                                Margin="{DynamicResource Spacing.S.Top}"
+                                                ClipToBounds="True">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto" />
+                                                    <RowDefinition Height="Auto" />
+                                                </Grid.RowDefinitions>
+
+                                                <Border Grid.Row="0"
+                                                        Background="{DynamicResource PanelBackground}"
+                                                        BorderBrush="{DynamicResource Border}"
+                                                        BorderThickness="0,0,0,1">
+                                                    <Grid>
+                                                        <StackPanel Orientation="Horizontal"
+                                                                    VerticalAlignment="Center"
+                                                                    Margin="{DynamicResource Spacing.M.Left}">
+                                                            <Ellipse Width="8" Height="8"
+                                                                     Fill="{DynamicResource Accent}" />
+                                                            <TextBlock Text="snippet.xaml"
+                                                                       Margin="{DynamicResource Spacing.M.Left}"
+                                                                       FontFamily="{DynamicResource Font.Mono}"
+                                                                       FontSize="{DynamicResource FontSize.X}"
+                                                                       Foreground="{DynamicResource Foreground.Muted}"
+                                                                       VerticalAlignment="Center" />
+                                                        </StackPanel>
+
+                                                        <ct:Button x:Name="PART_CopyButton"
+                                                                   ButtonKind="Ghost"
+                                                                   Icon="Copy"
+                                                                   IconSize="13"
+                                                                   Content="Copy"
+                                                                   HorizontalAlignment="Right"
+                                                                   ToolTip="Copy to clipboard" />
+                                                    </Grid>
+                                                </Border>
+
+                                                <avalon:TextEditor Grid.Row="1"
+                                                                   x:Name="PART_Editor"
+                                                                   IsReadOnly="True"
+                                                                   SyntaxHighlighting="XML"
+                                                                   ShowLineNumbers="True"
+                                                                   LineNumbersForeground="{DynamicResource Foreground.Muted}"
+                                                                   Foreground="{DynamicResource Foreground}"
+                                                                   FontFamily="{DynamicResource Font.Mono}"
+                                                                   FontSize="{DynamicResource FontSize.S}"
+                                                                   Background="Transparent"
+                                                                   Padding="{DynamicResource Spacing.M}"
+                                                                   HorizontalScrollBarVisibility="Auto"
+                                                                   VerticalScrollBarVisibility="Auto" />
+                                            </Grid>
                                         </Border>
                                     </Expander>
                                 </Border>

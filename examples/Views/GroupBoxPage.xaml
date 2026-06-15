@@ -12,11 +12,12 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <GroupBox Header="Account" 
+            <GroupBox Header="Account"
                       Width="420"
                       Margin="{DynamicResource Spacing.L.Top}">
                 <StackPanel>
-                    <CheckBox Content="Two-factor authentication" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
+                    <CheckBox Content="Two-factor authentication" IsChecked="True"
+                              Margin="{DynamicResource Spacing.M.Bottom}" />
                     <CheckBox Content="Email notifications" Margin="{DynamicResource Spacing.M.Bottom}" />
                     <CheckBox Content="Public profile" />
                 </StackPanel>

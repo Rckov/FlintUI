@@ -12,11 +12,12 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="Plan" 
+            <TextBlock Text="Plan"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Margin="{DynamicResource Spacing.M.Top}">
-                <RadioButton Content="Free" GroupName="Plan" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <RadioButton Content="Free" GroupName="Plan" IsChecked="True"
+                             Margin="{DynamicResource Spacing.M.Bottom}" />
                 <RadioButton Content="Pro" GroupName="Plan" Margin="{DynamicResource Spacing.M.Bottom}" />
                 <RadioButton Content="Team" GroupName="Plan" Margin="{DynamicResource Spacing.M.Bottom}" />
                 <RadioButton Content="Enterprise" GroupName="Plan" IsEnabled="False" />

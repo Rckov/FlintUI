@@ -12,12 +12,12 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="Empty" 
+            <TextBlock Text="Empty"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <DatePicker Width="280" Margin="{DynamicResource Spacing.M.Top}" />
 
-            <TextBlock Text="Disabled" 
+            <TextBlock Text="Disabled"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <DatePicker Width="280" IsEnabled="False" Margin="{DynamicResource Spacing.M.Top}" />

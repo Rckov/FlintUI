@@ -13,7 +13,7 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="Intents" 
+            <TextBlock Text="Intents"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Orientation="Horizontal" Margin="{DynamicResource Spacing.M.Top}">
@@ -23,16 +23,17 @@
                 <ct:Button Content="Ghost" ButtonKind="Ghost" />
             </StackPanel>
 
-            <TextBlock Text="With icon" 
+            <TextBlock Text="With icon"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Orientation="Horizontal" Margin="{DynamicResource Spacing.M.Top}">
-                <ct:Button Content="New item" Icon="Plus" ButtonKind="Accent" Margin="{DynamicResource Spacing.M.Right}" />
+                <ct:Button Content="New item" Icon="Plus" ButtonKind="Accent"
+                           Margin="{DynamicResource Spacing.M.Right}" />
                 <ct:Button Content="Save" Icon="Save" Margin="{DynamicResource Spacing.M.Right}" />
                 <ct:Button Content="Delete" Icon="Trash" ButtonKind="Danger" />
             </StackPanel>
 
-            <TextBlock Text="Icon only" 
+            <TextBlock Text="Icon only"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Orientation="Horizontal" Margin="{DynamicResource Spacing.M.Top}">
@@ -41,11 +42,12 @@
                 <ct:Button Icon="MoreHorizontal" ButtonKind="Ghost" />
             </StackPanel>
 
-            <TextBlock Text="Disabled" 
+            <TextBlock Text="Disabled"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Orientation="Horizontal" Margin="{DynamicResource Spacing.M.Top}">
-                <ct:Button Content="Accent" ButtonKind="Accent" IsEnabled="False" Margin="{DynamicResource Spacing.M.Right}" />
+                <ct:Button Content="Accent" ButtonKind="Accent" IsEnabled="False"
+                           Margin="{DynamicResource Spacing.M.Right}" />
                 <ct:Button Content="Default" IsEnabled="False" />
             </StackPanel>
         </StackPanel>

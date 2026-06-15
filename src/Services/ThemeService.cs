@@ -1,18 +1,19 @@
+using System.ComponentModel;
+using System.Globalization;
 using System.Windows;
-using FlintUI.Abstractions;
 
 namespace FlintUI.Services;
 
 public class ThemeService(ThemeProvider provider)
 {
-    private ResourceDictionary? _current;
-
     public static readonly ThemeService Instance = new(ThemeProvider.Instance);
+    private ResourceDictionary? _current;
     public ThemeType CurrentTheme { get; private set; }
 
     public void SetTheme(ThemeType theme)
     {
-        var descriptor = provider.Get(theme) ?? throw new InvalidOperationException($"Theme not registered: {theme.Key}");
+        var descriptor = provider.Get(theme) ??
+                         throw new InvalidOperationException($"Theme not registered: {theme.Key}");
 
         if (CurrentTheme == theme)
         {
@@ -47,6 +48,7 @@ public class ThemeService(ThemeProvider provider)
     }
 }
 
+[TypeConverter(typeof(ThemeTypeConverter))]
 public readonly struct ThemeType(string key) : IEquatable<ThemeType>
 {
     public static readonly ThemeType Dark = new("Dark");
@@ -74,13 +76,36 @@ public readonly struct ThemeType(string key) : IEquatable<ThemeType>
         return Key;
     }
 
-    public static bool operator == (ThemeType left, ThemeType right)
+    public static bool operator ==(ThemeType left, ThemeType right)
     {
         return left.Equals(right);
     }
 
-    public static bool operator != (ThemeType left, ThemeType right)
+    public static bool operator !=(ThemeType left, ThemeType right)
     {
         return !left.Equals(right);
+    }
+}
+
+public class ThemeTypeConverter : TypeConverter
+{
+    public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+    {
+        return sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
+    }
+
+    public override object? ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object? value)
+    {
+        if (value is not string s)
+        {
+            return base.ConvertFrom(context, culture, value);
+        }
+
+        if (s == ThemeType.Light.Key)
+        {
+            return ThemeType.Light;
+        }
+
+        return s == ThemeType.Dark.Key ? ThemeType.Dark : new ThemeType(s);
     }
 }

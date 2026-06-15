@@ -13,7 +13,7 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="Types" 
+            <TextBlock Text="Types"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Orientation="Horizontal" Margin="{DynamicResource Spacing.M.Top}">
@@ -24,7 +24,7 @@
                 <ct:Badge Content="Danger" BadgeType="Danger" />
             </StackPanel>
 
-            <TextBlock Text="Next to text" 
+            <TextBlock Text="Next to text"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="{DynamicResource Spacing.M.Top}">

@@ -1,0 +1,36 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="Background" Color="#1E1F22" />
+    <SolidColorBrush x:Key="ControlBackground" Color="#2B2D30" />
+    <SolidColorBrush x:Key="PanelBackground" Color="#25272A" />
+
+    <SolidColorBrush x:Key="Border" Color="#3C3F41" />
+    <SolidColorBrush x:Key="Border.Hover" Color="#4E5254" />
+
+    <SolidColorBrush x:Key="Foreground" Color="#DFE1E5" />
+    <SolidColorBrush x:Key="Foreground.Muted" Color="#A6ADB8" />
+
+    <SolidColorBrush x:Key="Accent" Color="#4C8DFF" />
+    <SolidColorBrush x:Key="Accent.Hover" Color="#6AA3FF" />
+    <SolidColorBrush x:Key="Accent.Pressed" Color="#3B7AF5" />
+    <SolidColorBrush x:Key="Accent.Dim" Color="#334C8DFF" />
+    <SolidColorBrush x:Key="Accent.Subtle" Color="#154C8DFF" />
+
+    <SolidColorBrush x:Key="Success" Color="#57C773" />
+    <SolidColorBrush x:Key="Success.Background" Color="#1E2A22" />
+    <SolidColorBrush x:Key="Success.Border" Color="#35553E" />
+    <SolidColorBrush x:Key="Success.Foreground" Color="#8EE7A4" />
+
+    <SolidColorBrush x:Key="Warning" Color="#E2A93B" />
+    <SolidColorBrush x:Key="Warning.Background" Color="#2B2418" />
+    <SolidColorBrush x:Key="Warning.Border" Color="#5A4B2C" />
+    <SolidColorBrush x:Key="Warning.Foreground" Color="#F5CC73" />
+
+    <SolidColorBrush x:Key="Danger" Color="#E05D5D" />
+    <SolidColorBrush x:Key="Danger.Hover" Color="#F06E6E" />
+    <SolidColorBrush x:Key="Danger.Background" Color="#2D1F1F" />
+    <SolidColorBrush x:Key="Danger.Border" Color="#5D3838" />
+
+    <SolidColorBrush x:Key="Overlay.Hover" Color="#10FFFFFF" />
+</ResourceDictionary>

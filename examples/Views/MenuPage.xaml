@@ -13,7 +13,7 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="Menu bar" 
+            <TextBlock Text="Menu bar"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <Menu HorizontalAlignment="Left" Margin="{DynamicResource Spacing.M.Top}">
@@ -37,7 +37,7 @@
                 </MenuItem>
             </Menu>
 
-            <TextBlock Text="Context menu" 
+            <TextBlock Text="Context menu"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <Border Width="320"

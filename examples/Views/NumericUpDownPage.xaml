@@ -38,7 +38,7 @@
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
 
-            <ct:NumericUpDown Width="160" Value="8" IsEnabled="False" 
+            <ct:NumericUpDown Width="160" Value="8" IsEnabled="False"
                               Margin="{DynamicResource Spacing.M.Top}"
                               HorizontalAlignment="Left" />
         </StackPanel>

@@ -12,19 +12,19 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="35%" 
+            <TextBlock Text="35%"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <ProgressBar Width="360" Height="6" Value="35"
                          Margin="{DynamicResource Spacing.M.Top}" />
 
-            <TextBlock Text="80%" 
+            <TextBlock Text="80%"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <ProgressBar Width="360" Height="6" Value="80"
                          Margin="{DynamicResource Spacing.M.Top}" />
 
-            <TextBlock Text="Indeterminate" 
+            <TextBlock Text="Indeterminate"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <ProgressBar Width="360" Height="6" IsIndeterminate="True"

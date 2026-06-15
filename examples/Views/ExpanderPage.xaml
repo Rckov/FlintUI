@@ -13,7 +13,7 @@
                        Margin="{DynamicResource Spacing.S.Top}" />
 
             <StackPanel Width="420" Margin="{DynamicResource Spacing.L.Top}">
-                <Expander Header="Shipping address" 
+                <Expander Header="Shipping address"
                           IsExpanded="True"
                           Margin="{DynamicResource Spacing.M.Bottom}">
                     <TextBlock Text="1 Market St, San Francisco, CA"

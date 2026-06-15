@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Globalization;
-using System.Windows;
-using FlintUI.Abstractions;
+﻿using System.Windows;
 using FlintUI.Services;
 
 namespace FlintUI;
@@ -10,6 +7,7 @@ public class FlintResources : ResourceDictionary
 {
     public FlintResources()
     {
+        Theme = ThemeType.Light;
         MergedDictionaries.Add(new ResourceDictionary
         {
             Source = new Uri("pack://application:,,,/FlintUI;component/FlintResources.xaml", UriKind.Absolute)

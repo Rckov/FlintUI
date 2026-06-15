@@ -170,5 +170,6 @@ public enum IconKind
     AlignLeft,
     AlignCenter,
     AlignRight,
-    AlignJustify
+    AlignJustify,
+    GitHub
 }

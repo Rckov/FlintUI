@@ -13,22 +13,22 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="Placeholder" 
+            <TextBlock Text="Placeholder"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <ct:TextBox Width="280" Placeholder="Type here" Margin="{DynamicResource Spacing.M.Top}" />
 
-            <TextBlock Text="With icon" 
+            <TextBlock Text="With icon"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <ct:TextBox Width="280" Placeholder="Search" IconKind="Search" Margin="{DynamicResource Spacing.M.Top}" />
 
-            <TextBlock Text="Clearable" 
+            <TextBlock Text="Clearable"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <ct:TextBox Width="280" Text="Clear me" ClearButton="True" Margin="{DynamicResource Spacing.M.Top}" />
 
-            <TextBlock Text="Disabled" 
+            <TextBlock Text="Disabled"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <ct:TextBox Width="280" Text="Read only" IsEnabled="False" Margin="{DynamicResource Spacing.M.Top}" />

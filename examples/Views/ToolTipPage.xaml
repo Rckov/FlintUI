@@ -14,10 +14,10 @@
                        Margin="{DynamicResource Spacing.S.Top}" />
 
             <StackPanel Orientation="Horizontal" Margin="{DynamicResource Spacing.L.Top}">
-                <ct:Button Content="Hover over me" 
+                <ct:Button Content="Hover over me"
                            ToolTip="A short, helpful hint"
                            Margin="{DynamicResource Spacing.M.Right}" />
-                <TextBlock Text="Or this text" 
+                <TextBlock Text="Or this text"
                            VerticalAlignment="Center"
                            ToolTip="Tooltips work on any element">
                     <TextBlock.TextDecorations>

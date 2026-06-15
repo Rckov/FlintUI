@@ -15,6 +15,13 @@
         <vm:ShellViewModel />
     </ct:Window.DataContext>
 
+    <ct:Window.RightContent>
+        <StackPanel Orientation="Horizontal">
+            <ct:Button ButtonKind="Ghost" Icon="GitHub" CornerRadius="0" Command="{Binding OpenGitHubCommand}" />
+            <ct:Button ButtonKind="Ghost" Icon="Sun" CornerRadius="0" Command="{Binding ChangeThemeCommand}" />
+        </StackPanel>
+    </ct:Window.RightContent>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="260" />

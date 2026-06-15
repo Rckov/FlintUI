@@ -56,8 +56,7 @@ public static class Snippets
     public const string Slider =
         """
         <Slider Minimum="0" Maximum="100" Value="60" />
-        <Slider Minimum="0" Maximum="10" Value="4"
-                TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" />
+        <Slider Minimum="0" Maximum="10" Value="4" TickFrequency="1" TickPlacement="BottomRight" IsSnapToTickEnabled="True" />
         """;
 
     public const string CheckBox =
@@ -80,8 +79,7 @@ public static class Snippets
 
     public const string DataGrid =
         """
-        <DataGrid ItemsSource="{Binding People}"
-                  AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid ItemsSource="{Binding People}" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
                 <DataGridTextColumn Header="Role" Binding="{Binding Role}" Width="Auto" />
@@ -156,8 +154,7 @@ public static class Snippets
         """
         <ct:Button Content="Success" Command="{Binding SuccessCommand}" />
 
-        Dialog.Show("Your changes have been saved.", "Saved",
-            DialogButton.Ok, DialogIcon.Success);
+        Dialog.Show("Your changes have been saved.", "Saved", DialogButton.Ok, DialogIcon.Success);
         """;
 
     public const string Spinner =

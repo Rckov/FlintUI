@@ -12,17 +12,18 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TextBlock Text="States" 
+            <TextBlock Text="States"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Margin="{DynamicResource Spacing.M.Top}">
                 <CheckBox Content="Checked" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
                 <CheckBox Content="Unchecked" Margin="{DynamicResource Spacing.M.Bottom}" />
-                <CheckBox Content="Disabled checked" IsChecked="True" IsEnabled="False" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <CheckBox Content="Disabled checked" IsChecked="True" IsEnabled="False"
+                          Margin="{DynamicResource Spacing.M.Bottom}" />
                 <CheckBox Content="Disabled" IsEnabled="False" />
             </StackPanel>
 
-            <TextBlock Text="Notifications" 
+            <TextBlock Text="Notifications"
                        FontWeight="{DynamicResource FontWeight.Medium}"
                        Margin="{DynamicResource Spacing.L.Top}" />
             <StackPanel Margin="{DynamicResource Spacing.M.Top}">

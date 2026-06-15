@@ -12,7 +12,7 @@
                        Foreground="{DynamicResource Foreground.Muted}"
                        Margin="{DynamicResource Spacing.S.Top}" />
 
-            <TreeView Width="320" 
+            <TreeView Width="320"
                       Height="240"
                       Margin="{DynamicResource Spacing.L.Top}">
                 <TreeViewItem Header="Project" IsExpanded="True">

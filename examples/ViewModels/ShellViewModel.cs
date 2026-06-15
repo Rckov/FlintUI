@@ -1,12 +1,16 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using FlintUI.Example.Views;
+using FlintUI.Services;
 
 namespace FlintUI.Example.ViewModels;
 
 public partial class ShellViewModel : ObservableObject
 {
+    [ObservableProperty] private bool _isDarkTheme;
     [ObservableProperty] private string _searchText = string.Empty;
 
     [ObservableProperty] private DemoItem? _selectedItem;
@@ -54,6 +58,30 @@ public partial class ShellViewModel : ObservableObject
 
     public ICollectionView Items { get; }
 
+    [RelayCommand]
+    private void ChangeTheme()
+    {
+        var theme = ThemeService.Instance.CurrentTheme;
+
+        ThemeService.Instance.SetTheme(theme != ThemeType.Dark
+            ? ThemeType.Dark
+            : ThemeType.Light);
+
+        IsDarkTheme = theme == ThemeType.Dark;
+    }
+
+    [RelayCommand]
+    private void OpenGitHub()
+    {
+        const string url = "https://github.com/Rckov/FlintUI";
+
+        Process.Start(new ProcessStartInfo
+        {
+            FileName = url,
+            UseShellExecute = true
+        });
+    }
+
     partial void OnSearchTextChanged(string value)
     {
         Items.Refresh();
@@ -66,7 +94,7 @@ public partial class ShellViewModel : ObservableObject
 
     private bool Filter(object item)
     {
-        return string.IsNullOrWhiteSpace(SearchText) 
+        return string.IsNullOrWhiteSpace(SearchText)
                || (item is DemoItem demo && demo.Title.IndexOf(SearchText, StringComparison.OrdinalIgnoreCase) >= 0);
     }
 }

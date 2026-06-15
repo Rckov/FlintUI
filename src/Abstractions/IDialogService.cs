@@ -4,7 +4,8 @@ namespace FlintUI.Abstractions;
 
 public interface IDialogService
 {
-    DialogResult Show(string message, string? caption = null, DialogButton buttons = DialogButton.Ok, DialogIcon icon = DialogIcon.None);
+    DialogResult Show(string message, string? caption = null, DialogButton buttons = DialogButton.Ok,
+        DialogIcon icon = DialogIcon.None);
 
     void Info(string message, string? caption = null);
 
