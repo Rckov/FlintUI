@@ -2,7 +2,7 @@
 [![Build and Release](https://github.com/Rckov/FlintUI/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/Rckov/FlintUI/actions/workflows/release.yml)
 [![NuGet](https://img.shields.io/nuget/v/FlintUI.svg?label=NuGet)](https://www.nuget.org/packages/FlintUI)
 
-<img src="examples/Resources/icon.ico" width="45" height="45" align="left">
+<img src="images/icon.png" width="45" height="45" align="left">
 
 # FlintUI
 
