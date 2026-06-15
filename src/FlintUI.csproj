@@ -1,2 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Version>1.0.0</Version>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Authors>Rckov</Authors>
+        <Company>Rckov</Company>
+        <Product>FlintUI</Product>
+        <PackageId>FlintUI</PackageId>
+        <Title>FlintUI</Title>
+        <Description>A WPF control library with light and dark themes for .NET Framework 4.8 and .NET 6/8/10.</Description>
+        <PackageTags>wpf;wpf-ui;wpf-controls;controls;dark-theme;light-theme;theme;xaml;ui</PackageTags>
+        <RepositoryUrl>https://github.com/Rckov/FlintUI</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/Rckov/FlintUI</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\images\icon.png" Pack="true" PackagePath="" Visible="false" />
+        <None Include="..\README.md" Pack="true" PackagePath="" Visible="false" />
+    </ItemGroup>
+
 </Project>
