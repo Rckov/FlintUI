@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.NumericUpDownPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI">
+    <c:ExampleView Code="{x:Static demo:Snippets.NumericUpDown}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="NumericUpDown"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A number field with step buttons, keyboard, and wheel support."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Default"
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ct:NumericUpDown Width="160" Value="8"
+                              Margin="{DynamicResource Spacing.M.Top}"
+                              HorizontalAlignment="Left" />
+
+            <TextBlock Text="Range 0 to 100, step 5"
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ct:NumericUpDown Width="160" Value="25" Minimum="0" Maximum="100" Step="5"
+                              Margin="{DynamicResource Spacing.M.Top}"
+                              HorizontalAlignment="Left" />
+
+            <TextBlock Text="Decimal"
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ct:NumericUpDown Width="160" Value="1.5" Step="0.1" StringFormat="0.0"
+                              Margin="{DynamicResource Spacing.M.Top}"
+                              HorizontalAlignment="Left" />
+
+            <TextBlock Text="Disabled"
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+
+            <ct:NumericUpDown Width="160" Value="8" IsEnabled="False" 
+                              Margin="{DynamicResource Spacing.M.Top}"
+                              HorizontalAlignment="Left" />
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

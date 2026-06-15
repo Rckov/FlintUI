@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.DatePickerPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.DatePicker}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="DatePicker"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A field with a drop-down calendar."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Empty" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <DatePicker Width="280" Margin="{DynamicResource Spacing.M.Top}" />
+
+            <TextBlock Text="Disabled" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <DatePicker Width="280" IsEnabled="False" Margin="{DynamicResource Spacing.M.Top}" />
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

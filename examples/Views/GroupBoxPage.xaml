@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.GroupBoxPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.GroupBox}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="GroupBox"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A titled frame around related content."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <GroupBox Header="Account" 
+                      Width="420"
+                      Margin="{DynamicResource Spacing.L.Top}">
+                <StackPanel>
+                    <CheckBox Content="Two-factor authentication" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
+                    <CheckBox Content="Email notifications" Margin="{DynamicResource Spacing.M.Bottom}" />
+                    <CheckBox Content="Public profile" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

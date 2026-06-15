@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.CheckBoxPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.CheckBox}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="CheckBox"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A box for independent on or off choices."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="States" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <StackPanel Margin="{DynamicResource Spacing.M.Top}">
+                <CheckBox Content="Checked" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <CheckBox Content="Unchecked" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <CheckBox Content="Disabled checked" IsChecked="True" IsEnabled="False" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <CheckBox Content="Disabled" IsEnabled="False" />
+            </StackPanel>
+
+            <TextBlock Text="Notifications" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <StackPanel Margin="{DynamicResource Spacing.M.Top}">
+                <CheckBox Content="Email" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <CheckBox Content="Push" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <CheckBox Content="Weekly digest" IsChecked="True" />
+            </StackPanel>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

@@ -63,9 +63,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style x:Key="DataGridCheckBox" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-    </Style>
 </ResourceDictionary>

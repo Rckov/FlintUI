@@ -1,0 +1,63 @@
+﻿<ct:Window x:Class="FlintUI.Example.Views.ShellView"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI"
+           xmlns:vm="clr-namespace:FlintUI.Example.ViewModels"
+           Icon="pack://application:,,,/Resources/icon.ico"
+           Title="FlintUI"
+           Subtitle="Component Gallery"
+           Width="1040"
+           Height="720"
+           MinWidth="860"
+           MinHeight="560"
+           WindowStartupLocation="CenterScreen">
+    <ct:Window.DataContext>
+        <vm:ShellViewModel />
+    </ct:Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Background="{DynamicResource PanelBackground}"
+                BorderBrush="{DynamicResource Border}"
+                BorderThickness="0,0,1,0">
+            <DockPanel Margin="{DynamicResource Spacing.M}">
+                <ct:TextBox DockPanel.Dock="Top"
+                            Placeholder="Search controls"
+                            IconKind="Search"
+                            ClearButton="True"
+                            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                            Margin="{DynamicResource Spacing.S.Bottom}" />
+
+                <ListBox Background="Transparent"
+                         BorderThickness="0"
+                         ItemsSource="{Binding Items}"
+                         SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                    <ListBox.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"
+                                               FontSize="{DynamicResource FontSize.X}"
+                                               FontWeight="{DynamicResource FontWeight.SemiBold}"
+                                               Foreground="{DynamicResource Foreground.Muted}"
+                                               Margin="8,12,8,4" />
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListBox.GroupStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Title}" FontSize="{DynamicResource FontSize.M}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+
+        <ContentControl Grid.Column="1" Content="{Binding SelectedItem.View}" Height="Auto" />
+    </Grid>
+</ct:Window>

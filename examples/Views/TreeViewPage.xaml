@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.TreeViewPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.TreeView}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="TreeView"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A hierarchy you can expand and collapse."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TreeView Width="320" 
+                      Height="240"
+                      Margin="{DynamicResource Spacing.L.Top}">
+                <TreeViewItem Header="Project" IsExpanded="True">
+                    <TreeViewItem Header="src" IsExpanded="True">
+                        <TreeViewItem Header="Controls" />
+                        <TreeViewItem Header="Styles" />
+                        <TreeViewItem Header="Brushes" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="examples">
+                        <TreeViewItem Header="Views" />
+                        <TreeViewItem Header="ViewModels" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="README.md" />
+                </TreeViewItem>
+            </TreeView>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

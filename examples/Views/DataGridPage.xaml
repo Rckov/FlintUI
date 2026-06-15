@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.DataGridPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:FlintUI.Example.ViewModels">
+    <UserControl.DataContext>
+        <vm:DataGridViewModel />
+    </UserControl.DataContext>
+    <c:ExampleView Code="{x:Static demo:Snippets.DataGrid}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="860" HorizontalAlignment="Left">
+            <TextBlock Text="DataGrid"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A table bound to a collection."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <DataGrid ItemsSource="{Binding People}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      HeadersVisibility="Column"
+                      Height="240"
+                      Margin="{DynamicResource Spacing.L.Top}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" />
+                    <DataGridTextColumn Header="Role" Binding="{Binding Role}" Width="Auto" />
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="2*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

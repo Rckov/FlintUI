@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.TabControlPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI">
+    <c:ExampleView Code="{x:Static demo:Snippets.TabControl}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="TabControl"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="Tabbed pages with optional close buttons."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <ct:TabControl CloseButton="True" MinHeight="160" Margin="{DynamicResource Spacing.L.Top}">
+                <ct:TabItem Header="Overview" CanClose="False">
+                    <TextBlock Text="This tab is pinned, so it has no close button."
+                               Foreground="{DynamicResource Foreground.Muted}"
+                               Margin="{DynamicResource Spacing.M.Top}" />
+                </ct:TabItem>
+                <ct:TabItem Header="Activity">
+                    <TextBlock Text="Recent activity for the workspace."
+                               Foreground="{DynamicResource Foreground.Muted}"
+                               Margin="{DynamicResource Spacing.M.Top}" />
+                </ct:TabItem>
+                <ct:TabItem Header="Settings">
+                    <TextBlock Text="Workspace preferences."
+                               Foreground="{DynamicResource Foreground.Muted}"
+                               Margin="{DynamicResource Spacing.M.Top}" />
+                </ct:TabItem>
+            </ct:TabControl>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

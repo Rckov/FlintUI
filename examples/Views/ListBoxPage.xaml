@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.ListBoxPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.ListBox}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="ListBox"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A scrollable list with selection."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <ListBox Width="320" Height="220" Margin="{DynamicResource Spacing.L.Top}">
+                <ListBoxItem Content="Inbox" IsSelected="True" />
+                <ListBoxItem Content="Starred" />
+                <ListBoxItem Content="Sent" />
+                <ListBoxItem Content="Drafts" />
+                <ListBoxItem Content="Archive" />
+                <ListBoxItem Content="Spam" />
+                <ListBoxItem Content="Trash" />
+            </ListBox>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

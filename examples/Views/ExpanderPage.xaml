@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.ExpanderPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.Expander}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="Expander"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A header that reveals or hides its content."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <StackPanel Width="420" Margin="{DynamicResource Spacing.L.Top}">
+                <Expander Header="Shipping address" 
+                          IsExpanded="True"
+                          Margin="{DynamicResource Spacing.M.Bottom}">
+                    <TextBlock Text="1 Market St, San Francisco, CA"
+                               Foreground="{DynamicResource Foreground.Muted}"
+                               Margin="{DynamicResource Spacing.M.Top}" />
+                </Expander>
+                <Expander Header="Billing address" Margin="{DynamicResource Spacing.M.Bottom}">
+                    <TextBlock Text="Same as shipping address."
+                               Foreground="{DynamicResource Foreground.Muted}"
+                               Margin="{DynamicResource Spacing.M.Top}" />
+                </Expander>
+                <Expander Header="Disabled" IsEnabled="False" />
+            </StackPanel>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.ComboBoxPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.ComboBox}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="ComboBox"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A drop-down list of options."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Default" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ComboBox Width="280" 
+                      SelectedIndex="0"
+                      Margin="{DynamicResource Spacing.M.Top}">
+                <ComboBoxItem Content="Low priority" />
+                <ComboBoxItem Content="Medium priority" />
+                <ComboBoxItem Content="High priority" />
+            </ComboBox>
+
+            <TextBlock Text="Disabled" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ComboBox Width="280" 
+                      SelectedIndex="0" 
+                      IsEnabled="False"
+                      Margin="{DynamicResource Spacing.M.Top}">
+                <ComboBoxItem Content="Locked selection" />
+            </ComboBox>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.SpinnerPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI">
+    <c:ExampleView Code="{x:Static demo:Snippets.Spinner}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="Spinner"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="An indeterminate loading indicator."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Sizes" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <StackPanel Orientation="Horizontal" Margin="{DynamicResource Spacing.M.Top}">
+                <ct:Spinner Width="20" Height="20" VerticalAlignment="Center"
+                            Margin="{DynamicResource Spacing.L.Right}" />
+                <ct:Spinner Width="28" Height="28" VerticalAlignment="Center"
+                            Margin="{DynamicResource Spacing.L.Right}" />
+                <ct:Spinner Width="36" Height="36" VerticalAlignment="Center" />
+            </StackPanel>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

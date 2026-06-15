@@ -8,14 +8,14 @@ namespace FlintUI.Example.Controls;
 public class ExampleView : ContentControl
 {
     public static readonly DependencyProperty CodeProperty =
-        DependencyProperty.Register(nameof(Code), typeof(string), typeof(ExampleView), new PropertyMetadata(string.Empty, OnCodeChanged));
+        DependencyProperty.Register(nameof(Code), typeof(string), typeof(ExampleView),
+            new PropertyMetadata(string.Empty, (d, _) => ((ExampleView)d).UpdateEditor()));
 
     private TextEditor? _editor;
 
     static ExampleView()
     {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(ExampleView),
-            new FrameworkPropertyMetadata(typeof(ExampleView)));
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(ExampleView), new FrameworkPropertyMetadata(typeof(ExampleView)));
     }
 
     public string Code
@@ -32,13 +32,9 @@ public class ExampleView : ContentControl
         UpdateEditor();
     }
 
-    private static void OnCodeChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
-    {
-        ((ExampleView)dependencyObject).UpdateEditor();
-    }
-
     private void UpdateEditor()
     {
-        _editor?.Text = Code.Trim();
+        _editor?.ShowLineNumbers = true;
+        _editor?.Text = (Code).Trim();
     }
 }

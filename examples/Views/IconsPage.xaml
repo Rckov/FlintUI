@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.IconsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI">
+    <c:ExampleView Code="{x:Static demo:Snippets.Icon}">
+        <StackPanel Margin="{DynamicResource Spacing.L}">
+            <TextBlock Text="Icons"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="Every icon in the set, built from one template."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <GroupBox Header="All icons" Margin="{DynamicResource Spacing.L.Top}">
+                <ItemsControl x:Name="Icons">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="92"
+                                        Margin="{DynamicResource Spacing.S}"
+                                        ToolTip="{Binding}">
+                                <ct:Icon Kind="{Binding}"
+                                         Size="20"
+                                         HorizontalAlignment="Center"
+                                         Margin="{DynamicResource Spacing.S.Bottom}" />
+                                <TextBlock Text="{Binding}"
+                                           FontSize="{DynamicResource FontSize.X}"
+                                           Foreground="{DynamicResource Foreground.Muted}"
+                                           TextAlignment="Center"
+                                           TextTrimming="CharacterEllipsis" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </GroupBox>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

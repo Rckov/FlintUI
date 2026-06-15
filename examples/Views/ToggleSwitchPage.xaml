@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.ToggleSwitchPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI">
+    <c:ExampleView Code="{x:Static demo:Snippets.ToggleSwitch}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="ToggleSwitch"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A switch for on or off settings."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Settings" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <StackPanel Margin="{DynamicResource Spacing.M.Top}" HorizontalAlignment="Left">
+                <ct:ToggleSwitch Content="Wi-Fi" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <ct:ToggleSwitch Content="Bluetooth" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <ct:ToggleSwitch Content="Airplane mode" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <ct:ToggleSwitch Content="Disabled" IsChecked="True" IsEnabled="False" />
+            </StackPanel>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

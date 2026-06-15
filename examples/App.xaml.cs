@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace FlintUI.Example;
+﻿namespace FlintUI.Example;
 
 public partial class App
 {

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.TextBoxPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI">
+    <c:ExampleView Code="{x:Static demo:Snippets.TextBox}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="TextBox"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A single-line text field."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Placeholder" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ct:TextBox Width="280" Placeholder="Type here" Margin="{DynamicResource Spacing.M.Top}" />
+
+            <TextBlock Text="With icon" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ct:TextBox Width="280" Placeholder="Search" IconKind="Search" Margin="{DynamicResource Spacing.M.Top}" />
+
+            <TextBlock Text="Clearable" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ct:TextBox Width="280" Text="Clear me" ClearButton="True" Margin="{DynamicResource Spacing.M.Top}" />
+
+            <TextBlock Text="Disabled" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <ct:TextBox Width="280" Text="Read only" IsEnabled="False" Margin="{DynamicResource Spacing.M.Top}" />
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.RadioButtonPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.RadioButton}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="RadioButton"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="Pick one option from a group."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Plan" 
+                       FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <StackPanel Margin="{DynamicResource Spacing.M.Top}">
+                <RadioButton Content="Free" GroupName="Plan" IsChecked="True" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <RadioButton Content="Pro" GroupName="Plan" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <RadioButton Content="Team" GroupName="Plan" Margin="{DynamicResource Spacing.M.Bottom}" />
+                <RadioButton Content="Enterprise" GroupName="Plan" IsEnabled="False" />
+            </StackPanel>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

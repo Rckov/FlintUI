@@ -150,8 +150,4 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style x:Key="DataGridComboBox" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
-        <Setter Property="Margin" Value="3,2" />
-    </Style>
 </ResourceDictionary>
