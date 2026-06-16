@@ -1,5 +1,10 @@
 namespace FlintUI.Controls;
 
+/// <summary>
+/// The built-in vector icons available to <see cref="Icon"/> and icon-aware controls. The names follow
+/// the Feather icon set; <see cref="None"/> means no icon.
+/// </summary>
+#pragma warning disable CS1591
 public enum IconKind
 {
     None,
@@ -173,3 +178,4 @@ public enum IconKind
     AlignJustify,
     GitHub
 }
+#pragma warning restore CS1591

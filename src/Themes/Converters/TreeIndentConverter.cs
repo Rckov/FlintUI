@@ -6,10 +6,15 @@ using System.Windows.Media;
 
 namespace FlintUI.Themes.Converters;
 
+/// <summary>
+/// Converts a <see cref="System.Windows.Controls.TreeViewItem"/> into a left <see cref="System.Windows.Thickness"/>
+/// that indents it according to its depth in the tree. Use for one-way binding in tree view templates.
+/// </summary>
 public class TreeIndentConverter : IValueConverter
 {
     private double Indent => 16d;
 
+    /// <inheritdoc/>
     public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         var left = 0d;
@@ -27,6 +32,8 @@ public class TreeIndentConverter : IValueConverter
         return new Thickness(left, 0, 0, 0);
     }
 
+    /// <inheritdoc/>
+    /// <exception cref="NotSupportedException">Always thrown; this converter is one-way only.</exception>
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         throw new NotSupportedException();

@@ -34,14 +34,16 @@ A gallery of every control. Grab the build from
 [Releases](https://github.com/Rckov/FlintUI/releases/latest), or run it from source with
 `dotnet run --project examples`.
 
-## Screenshots
+## Showcase
 
-![](images/tab1.png)
+![](images/showcase.gif)
 
-![](images/tab2.png)
+## Notes
 
-![](images/tab3.png)
+Some usage details and edge cases:
 
+- [Window](docs/window.md)
+- [Custom Themes](docs/themes.md)
 ---
 
 [MIT License](LICENSE) · [Report an Issue](https://github.com/Rckov/FlintUI/issues)
