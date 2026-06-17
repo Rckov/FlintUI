@@ -15,8 +15,8 @@
     <Geometry x:Key="Icon.ChevronsRight">M13 17L18 12L13 7 M6 17L11 12L6 7</Geometry>
     <Geometry x:Key="Icon.ChevronsUp">M17 11L12 6L7 11 M17 18L12 13L7 18</Geometry>
     <Geometry x:Key="Icon.ChevronsDown">M7 13L12 18L17 13 M7 6L12 11L17 6</Geometry>
-    <Geometry x:Key="Icon.CornerDownLeft">M9 10L4 15L9 20 M20 4V7A4 4 0 0 1 16 11H4V15</Geometry>
-    <Geometry x:Key="Icon.CornerDownRight">M15 10L20 15L15 20 M4 4V7A4 4 0 0 0 8 11H20V15</Geometry>
+    <Geometry x:Key="Icon.CornerDownLeft">M9 10L4 15L9 20 M20 4V11A4 4 0 0 1 16 15H4</Geometry>
+    <Geometry x:Key="Icon.CornerDownRight">M15 10L20 15L15 20 M4 4V11A4 4 0 0 0 8 15H20</Geometry>
 
     <Geometry x:Key="Icon.WindowMinimize">M5 12H19</Geometry>
     <Geometry x:Key="Icon.WindowMaximize">M4 4H20V20H4V4Z</Geometry>
@@ -42,10 +42,10 @@
     <Geometry x:Key="Icon.RefreshCW">M21 2V8H15 M3 12A9 9 0 0 1 15 3.34 M3 22V16H9 M21 12A9 9 0 0 1 9 20.66</Geometry>
     <Geometry x:Key="Icon.Filter">M22 3H2L10 12.46V19L14 21V12.46Z</Geometry>
     <Geometry x:Key="Icon.Sort">M3 6H21 M6 12H18 M9 18H15</Geometry>
-    <Geometry x:Key="Icon.Link">M10 13A5 5 0 0 0 15 13L19 9A5 5 0 0 0 12.07 2.07L10.07 4.07 M14 11A5 5 0 0 0 9 11L5 15A5 5 0 0 0 11.93 21.93L13.93 19.93</Geometry>
+    <Geometry x:Key="Icon.Link">M10 13A5 5 0 0 0 17.54 13.54L20.54 10.54A5 5 0 0 0 13.47 3.47L11.75 5.18 M14 11A5 5 0 0 0 6.46 10.46L3.46 13.46A5 5 0 0 0 10.53 20.53L12.24 18.82</Geometry>
     <Geometry x:Key="Icon.Link2">M15 7H18A5 5 0 0 1 18 17H15 M9 17H6A5 5 0 0 1 6 7H9 M8 12H16</Geometry>
     <Geometry x:Key="Icon.ExternalLink">M18 13V19A2 2 0 0 1 16 21H5A2 2 0 0 1 3 19V8A2 2 0 0 1 5 6H11 M15 3H21V9 M10 14L21 3</Geometry>
-    <Geometry x:Key="Icon.Scissors">M6 3A3 3 0 1 0 6 9A3 3 0 0 0 6 3Z M18 3A3 3 0 1 0 18 9A3 3 0 0 0 18 3Z M8.5 7.5L21 21 M8.5 16.5L20 4 M14 14L21 21</Geometry>
+    <Geometry x:Key="Icon.Scissors">M6 3A3 3 0 1 0 6 9A3 3 0 0 0 6 3Z M8.12 8.12L12 12 M20 4L8.12 15.88 M6 15A3 3 0 1 0 6 21A3 3 0 0 0 6 15Z M14.8 14.8L20 20</Geometry>
     <Geometry x:Key="Icon.Move">M5 9L2 12L5 15 M9 5L12 2L15 5 M15 19L12 22L9 19 M19 9L22 12L19 15 M2 12H22 M12 2V22</Geometry>
     <Geometry x:Key="Icon.Drag">M9 3H9.01 M15 3H15.01 M9 9H9.01 M15 9H15.01 M9 15H9.01 M15 15H15.01 M9 21H9.01 M15 21H15.01</Geometry>
     <Geometry x:Key="Icon.Pin">M12 17V22 M5 17H19 M5 17A2 2 0 0 1 5 13L8 4H16L19 13A2 2 0 0 1 19 17 M9 4V2 M15 4V2</Geometry>
@@ -58,7 +58,7 @@
 
     <Geometry x:Key="Icon.Info">M12 22A10 10 0 1 0 12 2A10 10 0 0 0 12 22Z M12 8H12.01 M12 12V16</Geometry>
     <Geometry x:Key="Icon.Warning">M10.29 3.86L1.82 18A2 2 0 0 0 3.61 21H20.39A2 2 0 0 0 22.18 18L13.71 3.86A2 2 0 0 0 10.29 3.86Z M12 9V13 M12 17H12.01</Geometry>
-    <Geometry x:Key="Icon.CheckCircle">M22 11.08V12A10 10 0 1 1 5.93 7 M22 4L12 14.01L9 11.01</Geometry>
+    <Geometry x:Key="Icon.CheckCircle">M21.801 10A10 10 0 1 1 17 3.335 M9 11L12 14L22 4</Geometry>
     <Geometry x:Key="Icon.XCircle">M12 22A10 10 0 1 0 12 2A10 10 0 0 0 12 22Z M15 9L9 15 M9 9L15 15</Geometry>
     <Geometry x:Key="Icon.HelpCircle">M12 22A10 10 0 1 0 12 2A10 10 0 0 0 12 22Z M9.09 9A3 3 0 0 1 14.92 10C14.92 12 11.92 13 11.92 13 M12 17H12.01</Geometry>
     <Geometry x:Key="Icon.Loader">M12 2V6 M12 18V22 M4.93 4.93L7.76 7.76 M16.24 16.24L19.07 19.07 M2 12H6 M18 12H22 M4.93 19.07L7.76 16.24 M16.24 7.76L19.07 4.93</Geometry>
