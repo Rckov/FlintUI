@@ -8,149 +8,109 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ct:DialogWindow}">
-                    <ControlTemplate.Resources>
-                        <Style x:Key="DialogPrimary" TargetType="{x:Type Button}">
-                            <Setter Property="Foreground" Value="White" />
-                            <Setter Property="MinWidth" Value="76" />
-                            <Setter Property="Cursor" Value="Hand" />
-                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                            <Setter Property="Margin" Value="{DynamicResource Spacing.S.Left}" />
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border x:Name="Bd"
-                                                Background="{DynamicResource Accent}"
-                                                CornerRadius="{DynamicResource Radius.S}"
-                                                Padding="14,7">
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="Bd" Property="Background"
-                                                        Value="{DynamicResource Accent.Hover}" />
-                                            </Trigger>
-                                            <Trigger Property="IsPressed" Value="True">
-                                                <Setter TargetName="Bd" Property="Background"
-                                                        Value="{DynamicResource Accent.Pressed}" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-
-                        <Style x:Key="DialogSecondary" TargetType="{x:Type Button}">
-                            <Setter Property="Foreground" Value="{DynamicResource Foreground}" />
-                            <Setter Property="MinWidth" Value="76" />
-                            <Setter Property="Cursor" Value="Hand" />
-                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                            <Setter Property="Margin" Value="{DynamicResource Spacing.S.Left}" />
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border x:Name="Bd"
-                                                Background="{DynamicResource ControlBackground}"
-                                                BorderBrush="{DynamicResource Border}"
-                                                BorderThickness="1"
-                                                CornerRadius="{DynamicResource Radius.S}"
-                                                Padding="14,7">
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="Bd" Property="Background"
-                                                        Value="{DynamicResource Border}" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </ControlTemplate.Resources>
-
-                    <Border Margin="12"
-                            MinWidth="320"
-                            MaxWidth="460"
+                    <Border MinWidth="320"
+                            MaxWidth="520"
                             Background="{DynamicResource ControlBackground}"
                             BorderBrush="{DynamicResource Border}"
                             BorderThickness="1"
                             CornerRadius="{DynamicResource Radius.M}"
+                            Padding="{DynamicResource Spacing.L}"
                             Effect="{DynamicResource Shadow.M}">
-                        <Grid Margin="{DynamicResource Spacing.L}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+
+                        <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
 
-                            <ct:Icon x:Name="DialogIcon"
-                                     Grid.Column="0"
-                                     Grid.Row="0"
-                                     Grid.RowSpan="2"
-                                     Size="22"
-                                     Margin="{DynamicResource Spacing.M.Right}"
-                                     VerticalAlignment="Top"
-                                     Visibility="Collapsed" />
+                            <StackPanel x:Name="PART_Header" Grid.Row="0" Orientation="Horizontal">
+                                <ct:Icon x:Name="DialogIcon"
+                                         Size="20"
+                                         VerticalAlignment="Top"
+                                         Visibility="Collapsed"
+                                         Margin="{DynamicResource Spacing.M.Right}" />
 
-                            <TextBlock x:Name="CaptionText"
-                                       Grid.Column="1"
-                                       Grid.Row="0"
-                                       Text="{TemplateBinding Caption}"
-                                       FontSize="{DynamicResource FontSize.L}"
-                                       FontWeight="{DynamicResource FontWeight.Medium}"
-                                       TextWrapping="Wrap"
-                                       Margin="{DynamicResource Spacing.S.Bottom}" />
+                                <TextBlock x:Name="CaptionText"
+                                           Text="{TemplateBinding Caption}"
+                                           FontSize="{DynamicResource FontSize.L}"
+                                           FontWeight="{DynamicResource FontWeight.SemiBold}"
+                                           TextWrapping="Wrap"
+                                           VerticalAlignment="Center" />
+                            </StackPanel>
 
-                            <TextBlock Grid.Column="1"
-                                       Grid.Row="1"
+                            <TextBlock Grid.Row="1"
+                                       Margin="{DynamicResource Spacing.L.Vertical}"
                                        Text="{TemplateBinding Message}"
-                                       Foreground="{DynamicResource Foreground.Muted}"
-                                       TextWrapping="Wrap" />
+                                       TextWrapping="Wrap"
+                                       Foreground="{DynamicResource Foreground.Muted}" />
 
-                            <StackPanel Grid.Column="0"
-                                        Grid.ColumnSpan="2"
-                                        Grid.Row="2"
+                            <StackPanel Grid.Row="2"
                                         Orientation="Horizontal"
-                                        HorizontalAlignment="Right"
-                                        Margin="{DynamicResource Spacing.L.Top}">
-                                <Button x:Name="PART_Cancel" Content="{DynamicResource Dialog.Cancel}" IsCancel="True"
-                                        Visibility="Collapsed" Style="{StaticResource DialogSecondary}" />
-                                <Button x:Name="PART_No" Content="{DynamicResource Dialog.No}" Visibility="Collapsed"
-                                        Style="{StaticResource DialogSecondary}" />
-                                <Button x:Name="PART_Yes" Content="{DynamicResource Dialog.Yes}" IsDefault="True"
-                                        Visibility="Collapsed" Style="{StaticResource DialogPrimary}" />
-                                <Button x:Name="PART_Ok" Content="{DynamicResource Dialog.Ok}" IsDefault="True"
-                                        Visibility="Collapsed" Style="{StaticResource DialogPrimary}" />
+                                        HorizontalAlignment="Right">
+
+                                <ct:Button x:Name="PART_Cancel"
+                                           Content="{DynamicResource Dialog.Cancel}"
+                                           ButtonKind="Default"
+                                           IsCancel="True"
+                                           Visibility="Collapsed" />
+
+                                <ct:Button x:Name="PART_No"
+                                           Content="{DynamicResource Dialog.No}"
+                                           ButtonKind="Default"
+                                           Visibility="Collapsed"
+                                           Margin="{DynamicResource Spacing.S.Left}" />
+
+                                <ct:Button x:Name="PART_Yes"
+                                           Content="{DynamicResource Dialog.Yes}"
+                                           ButtonKind="Accent"
+                                           IsDefault="True"
+                                           Visibility="Collapsed"
+                                           Margin="{DynamicResource Spacing.S.Left}" />
+
+                                <ct:Button x:Name="PART_Ok"
+                                           Content="{DynamicResource Dialog.Ok}"
+                                           ButtonKind="Accent"
+                                           IsDefault="True"
+                                           Visibility="Collapsed"
+                                           Margin="{DynamicResource Spacing.S.Left}" />
                             </StackPanel>
                         </Grid>
                     </Border>
+
                     <ControlTemplate.Triggers>
+
                         <Trigger Property="Caption" Value="">
                             <Setter TargetName="CaptionText" Property="Visibility" Value="Collapsed" />
                         </Trigger>
 
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Caption" Value="" />
+                                <Condition Property="Symbol" Value="None" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_Header" Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+
                         <Trigger Property="Buttons" Value="Ok">
                             <Setter TargetName="PART_Ok" Property="Visibility" Value="Visible" />
                         </Trigger>
+
                         <Trigger Property="Buttons" Value="OkCancel">
                             <Setter TargetName="PART_Ok" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_Cancel" Property="Visibility" Value="Visible" />
                         </Trigger>
+
                         <Trigger Property="Buttons" Value="YesNo">
                             <Setter TargetName="PART_Yes" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_No" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_No" Property="IsCancel" Value="True" />
                         </Trigger>
+
                         <Trigger Property="Buttons" Value="YesNoCancel">
                             <Setter TargetName="PART_Yes" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_No" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_Cancel" Property="Visibility" Value="Visible" />
-                        </Trigger>
-                        <Trigger Property="Buttons" Value="YesNo">
-                            <Setter TargetName="PART_No" Property="IsCancel" Value="True" />
                         </Trigger>
 
                         <Trigger Property="Symbol" Value="Info">
@@ -158,30 +118,34 @@
                             <Setter TargetName="DialogIcon" Property="Kind" Value="Info" />
                             <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Accent}" />
                         </Trigger>
+
                         <Trigger Property="Symbol" Value="Success">
                             <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
                             <Setter TargetName="DialogIcon" Property="Kind" Value="CheckCircle" />
                             <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Success}" />
                         </Trigger>
+
                         <Trigger Property="Symbol" Value="Warning">
                             <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
                             <Setter TargetName="DialogIcon" Property="Kind" Value="Warning" />
                             <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Warning}" />
                         </Trigger>
+
                         <Trigger Property="Symbol" Value="Error">
                             <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
                             <Setter TargetName="DialogIcon" Property="Kind" Value="XCircle" />
                             <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Danger}" />
                         </Trigger>
+
                         <Trigger Property="Symbol" Value="Question">
                             <Setter TargetName="DialogIcon" Property="Visibility" Value="Visible" />
                             <Setter TargetName="DialogIcon" Property="Kind" Value="HelpCircle" />
                             <Setter TargetName="DialogIcon" Property="Foreground" Value="{DynamicResource Accent}" />
                         </Trigger>
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>
