@@ -166,4 +166,30 @@ public static class Snippets
         """
         <ct:Button Content="Hover over me" ToolTip="A short, helpful hint" />
         """;
+
+    public const string GridSplitter =
+        """
+        <Grid Height="140">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" MinWidth="60" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" MinWidth="60" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" />
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+            <Border Grid.Column="2" />
+        </Grid>
+        """;
+
+    public const string Frame =
+        """
+        <Frame x:Name="MainFrame" BorderThickness="1" />
+        ""
+        // Navigate to a page
+        MainFrame.Navigate(new HomePage());
+
+        // Move through history
+        if (MainFrame.CanGoBack) MainFrame.GoBack();
+        if (MainFrame.CanGoForward) MainFrame.GoForward();
+        """;
 }

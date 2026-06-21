@@ -44,6 +44,9 @@ public partial class ShellViewModel : ObservableObject
             new("GroupBox", "Containers", new GroupBoxPage()),
             new("Menu", "Containers", new MenuPage()),
 
+            new("GridSplitter", "Layout", new GridSplitterPage()),
+            new("Frame", "Layout", new FramePage()),
+
             new("Dialog", "Feedback", new DialogPage()),
             new("Spinner", "Feedback", new SpinnerPage()),
             new("ToolTip", "Feedback", new ToolTipPage())

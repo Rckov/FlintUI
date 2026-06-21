@@ -35,6 +35,7 @@
         <ResourceDictionary Source="Styles/ListBox.xaml" />
         <ResourceDictionary Source="Styles/ProgressBar.xaml" />
         <ResourceDictionary Source="Styles/TreeView.xaml" />
+        <ResourceDictionary Source="Styles/GridSplitter.xaml" />
         <ResourceDictionary Source="Styles/Slider.xaml" />
         <ResourceDictionary Source="Styles/ToolTip.xaml" />
         <ResourceDictionary Source="Styles/Spinner.xaml" />
@@ -42,6 +43,7 @@
         <ResourceDictionary Source="Styles/DatePicker.xaml" />
         <ResourceDictionary Source="Styles/Dialog.xaml" />
         <ResourceDictionary Source="Styles/DataGrid.xaml" />
+        <ResourceDictionary Source="Styles/Frame.xaml" />
 
         <!--#endregion-->
     </ResourceDictionary.MergedDictionaries>
