@@ -22,15 +22,22 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
-      - name: Publish demo
-        run: dotnet publish examples/FlintUI.Example.csproj -c Release -f net48 -o publish
+      - name: Publish demo (net462)
+        run: dotnet publish examples/FlintUI.Example.csproj -c Release -f net462 -o publish/net462
 
-      - name: Zip build
+      - name: Publish demo (net10.0-windows)
+        run: dotnet publish examples/FlintUI.Example.csproj -c Release -f net10.0-windows -o publish/net10.0-windows
+
+      - name: Zip builds
         shell: pwsh
-        run: Compress-Archive -Path publish/* -DestinationPath FlintUI-Demo.zip
+        run: |
+          Compress-Archive -Path publish/net462/* -DestinationPath FlintUI-Demo-net462.zip
+          Compress-Archive -Path publish/net10.0-windows/* -DestinationPath FlintUI-Demo-net10.zip
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          files: FlintUI-Demo.zip
+          files: |
+            FlintUI-Demo-net462.zip
+            FlintUI-Demo-net10.zip
           generate_release_notes: true
