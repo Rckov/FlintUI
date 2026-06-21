@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="FlintUI.Example.Views.GridSplitterPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:c="clr-namespace:FlintUI.Example.Controls"
+             xmlns:demo="clr-namespace:FlintUI.Example"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <c:ExampleView Code="{x:Static demo:Snippets.GridSplitter}">
+        <StackPanel Margin="{DynamicResource Spacing.L}" MaxWidth="720" HorizontalAlignment="Left">
+            <TextBlock Text="GridSplitter"
+                       FontSize="{DynamicResource FontSize.XL}"
+                       FontWeight="{DynamicResource FontWeight.SemiBold}" />
+            <TextBlock Text="A draggable divider that resizes rows or columns in a Grid."
+                       Foreground="{DynamicResource Foreground.Muted}"
+                       Margin="{DynamicResource Spacing.S.Top}" />
+
+            <TextBlock Text="Vertical (column)" FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <Grid Height="140" Width="460" Margin="{DynamicResource Spacing.M.Top}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" MinWidth="60" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" MinWidth="60" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0"
+                        Background="{DynamicResource PanelBackground}"
+                        BorderBrush="{DynamicResource Border}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource Radius.S}">
+                    <TextBlock Text="Left panel"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource Foreground.Muted}" />
+                </Border>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+                <Border Grid.Column="2"
+                        Background="{DynamicResource PanelBackground}"
+                        BorderBrush="{DynamicResource Border}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource Radius.S}">
+                    <TextBlock Text="Right panel"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource Foreground.Muted}" />
+                </Border>
+            </Grid>
+
+            <TextBlock Text="Horizontal (row)" FontWeight="{DynamicResource FontWeight.Medium}"
+                       Margin="{DynamicResource Spacing.L.Top}" />
+            <Grid Height="200" Width="460" Margin="{DynamicResource Spacing.M.Top}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" MinHeight="40" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*" MinHeight="40" />
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        Background="{DynamicResource PanelBackground}"
+                        BorderBrush="{DynamicResource Border}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource Radius.S}">
+                    <TextBlock Text="Top panel"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource Foreground.Muted}" />
+                </Border>
+                <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                <Border Grid.Row="2"
+                        Background="{DynamicResource PanelBackground}"
+                        BorderBrush="{DynamicResource Border}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource Radius.S}">
+                    <TextBlock Text="Bottom panel"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource Foreground.Muted}" />
+                </Border>
+            </Grid>
+        </StackPanel>
+    </c:ExampleView>
+</UserControl>

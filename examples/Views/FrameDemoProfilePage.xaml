@@ -1,0 +1,68 @@
+﻿<Page x:Class="FlintUI.Example.Views.FrameDemoProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:ct="clr-namespace:FlintUI.Controls;assembly=FlintUI"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="Transparent">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <Border Width="52" Height="52"
+                Background="{DynamicResource Accent.Subtle}"
+                BorderBrush="{DynamicResource Accent}" BorderThickness="2"
+                CornerRadius="{DynamicResource Radius.Full}"
+                HorizontalAlignment="Center">
+            <ct:Icon Kind="User" Size="22" Foreground="{DynamicResource Accent}"
+                     HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Border>
+
+        <TextBlock Text="Alex Johnson"
+                   FontSize="{DynamicResource FontSize.L}"
+                   FontWeight="{DynamicResource FontWeight.SemiBold}"
+                   HorizontalAlignment="Center"
+                   Margin="{DynamicResource Spacing.M.Top}" />
+        <TextBlock Text="Product Designer"
+                   Foreground="{DynamicResource Foreground.Muted}"
+                   HorizontalAlignment="Center"
+                   Margin="{DynamicResource Spacing.S.Top}" />
+
+        <UniformGrid Columns="3" Margin="{DynamicResource Spacing.M.Top}" Width="280">
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="128" FontWeight="{DynamicResource FontWeight.SemiBold}"
+                           HorizontalAlignment="Center" />
+                <TextBlock Text="Posts" FontSize="{DynamicResource FontSize.S}"
+                           Foreground="{DynamicResource Foreground.Muted}"
+                           HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="4.2k" FontWeight="{DynamicResource FontWeight.SemiBold}"
+                           HorizontalAlignment="Center" />
+                <TextBlock Text="Followers" FontSize="{DynamicResource FontSize.S}"
+                           Foreground="{DynamicResource Foreground.Muted}"
+                           HorizontalAlignment="Center" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="340" FontWeight="{DynamicResource FontWeight.SemiBold}"
+                           HorizontalAlignment="Center" />
+                <TextBlock Text="Following" FontSize="{DynamicResource FontSize.S}"
+                           Foreground="{DynamicResource Foreground.Muted}"
+                           HorizontalAlignment="Center" />
+            </StackPanel>
+        </UniformGrid>
+
+        <Border Height="1" Background="{DynamicResource Border}"
+                Margin="{DynamicResource Spacing.M.Vertical}" Width="280" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                    Margin="{DynamicResource Spacing.S.Bottom}">
+            <ct:Icon Kind="Mail" Size="13" Foreground="{DynamicResource Foreground.Muted}"
+                     VerticalAlignment="Center" Margin="{DynamicResource Spacing.S.Right}" />
+            <TextBlock Text="alex@example.com" Foreground="{DynamicResource Foreground.Muted}" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <ct:Icon Kind="MapPin" Size="13" Foreground="{DynamicResource Foreground.Muted}"
+                     VerticalAlignment="Center" Margin="{DynamicResource Spacing.S.Right}" />
+            <TextBlock Text="San Francisco, CA" Foreground="{DynamicResource Foreground.Muted}" />
+        </StackPanel>
+
+    </StackPanel>
+</Page>
